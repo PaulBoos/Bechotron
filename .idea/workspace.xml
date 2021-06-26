@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Old Code Merge">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/CommandDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/CommandDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tXOcBE4cyjPpklhgzRzxnjmZBZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BotInstance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Head.BotInstance" />
+      <module name="Bechotron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Head.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BotInstance" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="" />
+      <created>1622912047703</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622912047703</updated>
+      <workItem from="1623933916054" duration="4604000" />
+      <workItem from="1624031121312" duration="1204000" />
+      <workItem from="1624091197640" duration="471000" />
+      <workItem from="1624092533583" duration="621000" />
+      <workItem from="1624354987942" duration="371000" />
+      <workItem from="1624355483215" duration="40000" />
+      <workItem from="1624364780229" duration="598000" />
+      <workItem from="1624379633251" duration="612000" />
+      <workItem from="1624737932124" duration="1396000" />
+    </task>
+    <task id="LOCAL-00001" summary="Old Code Merge">
+      <created>1622912597487</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622912597487</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Old Code Merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Old Code Merge" />
+  </component>
+</project>

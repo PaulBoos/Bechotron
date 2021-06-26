@@ -1,0 +1,7 @@
+package Modules;
+
+public interface Module {
+
+
+
+}

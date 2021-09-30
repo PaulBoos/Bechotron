@@ -54,14 +54,16 @@ public class SlashModule extends ListenerAdapter implements Module {
 			//addCommands(Command.ping,Command.say);
 		}
 		if(instance.guild == 739513862449266729L) { //BTS
-			//addCommands(Command.memberinfo, Command.delete);
+			addCommands(Command.memberinfo, Command.delete);
 		}
 		if(instance.guild == 652967667946225667L) { //J4F
 			addCommands(Command.memberinfo, Command.avatar, Command.music, Command.vip);
 		}
-		
 		if(instance.guild == 795777477627609153L) { //Garry
 			//addCommands(Command.timeout);
+		}
+		if(instance.guild == 328874791669071882L) {
+			addCommands(Command.memberinfo);
 		}
 		if(updateDiscord) {
 			CommandListUpdateAction updater = instance.bot.jda.getGuildById(instance.guild).updateCommands();

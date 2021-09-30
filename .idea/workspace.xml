@@ -5,19 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Old Code Merge">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/CommandDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/CommandDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Skull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06d74281-75d3-45be-8466-c0bfcfc860db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06d74281-75d3-45be-8466-c0bfcfc860db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/60aae942-f0bc-4077-9c8a-cdeb5e0c3c48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60aae942-f0bc-4077-9c8a-cdeb5e0c3c48.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Head/dbAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/dbAccess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1tXOcBE4cyjPpklhgzRzxnjmZBZ" />
   <component name="ProjectLevelVcsManager">
@@ -36,7 +61,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,6 +112,13 @@
       <workItem from="1624364780229" duration="598000" />
       <workItem from="1624379633251" duration="612000" />
       <workItem from="1624737932124" duration="1396000" />
+      <workItem from="1624739416888" duration="823000" />
+      <workItem from="1625411833330" duration="1159000" />
+      <workItem from="1626460668838" duration="4274000" />
+      <workItem from="1627206930221" duration="2453000" />
+      <workItem from="1632430961004" duration="3842000" />
+      <workItem from="1633007152503" duration="301000" />
+      <workItem from="1633007583522" duration="666000" />
     </task>
     <task id="LOCAL-00001" summary="Old Code Merge">
       <created>1622912597487</created>
@@ -101,5 +137,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Old Code Merge" />
     <option name="LAST_COMMIT_MESSAGE" value="Old Code Merge" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

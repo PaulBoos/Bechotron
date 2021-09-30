@@ -2,6 +2,7 @@ package Modules.SlashCommands;
 
 import Modules.Music.MusicModule;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -85,18 +86,17 @@ public enum Command {
 			"music",
 			"Music Controller",
 			event -> {
-				event.deferReply().queue();
-				VoiceChannel vc = event.getMember().getVoiceState().getChannel();
-				TextChannel tc = event.getTextChannel();
-				String url = event.getOption("url").getAsString();
-				MusicModule.manager.loadAndPlay(tc, vc, url);
-			},
-			new OptionData(
-					STRING,
-					"action",
-					"which action is to perform"
-			)
-			.setRequired(true)
+				switch(event.getOption("action").getAsString()) {
+					case "play" -> {
+						event.deferReply().queue();
+						VoiceChannel vc = event.getMember().getVoiceState().getChannel();
+						TextChannel tc = event.getTextChannel();
+						String url = event.getOption("url").getAsString();
+						MusicModule.manager.loadAndPlay(tc, vc, url);
+						event.getHook().editOriginal("\u25B6 Playing...").queue();
+					}
+				}
+			}
 	),
 	memberinfo(
 			"memberinfo",
@@ -110,16 +110,20 @@ public enum Command {
 					assert target != null;
 					if(target.getUser().getName() != target.getEffectiveName())
 						description.append("Handle: ").append(target.getUser().getName());
-					description.append("\n[").append(target.getOnlineStatus().getKey()).append("]");
+					switch(target.getOnlineStatus()) {
+						case ONLINE -> description.append("\n\uD83D\uDFE2 Online");
+						case IDLE -> description.append("\n\uD83D\uDFE1 Idle");
+						case DO_NOT_DISTURB -> description.append("\n\uD83D\uDD34 Do not Disturb");
+						case OFFLINE -> description.append("\n\u26AA Offline");
+						default -> description.append("\n\u2754 Unknown");
+					}
 					if(target.getVoiceState().inVoiceChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
 
 				}
-				
-				//TODO DID THIS WORK?!
-				event.reply((Message) new EmbedBuilder()
+				event.replyEmbeds(new EmbedBuilder()
 						.setTitle(target.getEffectiveName())
 						.setDescription(description.toString())
-						.setFooter("Requested by " + event.getMember().getEffectiveName())
+						.setFooter("Requested by " + event.getMember().getUser().getAsTag() + " #" + event.getMember().getIdLong())
 						.setImage(target.getUser().getAvatarUrl()).build()).complete();
 			},
 			new OptionData(

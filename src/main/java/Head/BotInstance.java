@@ -69,7 +69,6 @@ public class BotInstance {
 		).setMemberCachePolicy(
 				MemberCachePolicy.ALL
 		).build();
-		System.out.println("Login Successful");
 		jda.awaitReady();
 		setPresence();
 		createGuilds(false);
@@ -78,9 +77,7 @@ public class BotInstance {
 	}
 	
 	public void setPresence() {
-//		jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.of(Activity.ActivityType.LISTENING, "\"help!\" or \"about!\""));
 		jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.of(Activity.ActivityType.DEFAULT, "Now with SLASH COMMANDS!"));
-		System.out.println("Presence Set.");
 	}
 	
 	public void createGuilds(boolean log) {

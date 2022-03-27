@@ -1,6 +1,6 @@
 package Head;
 
-import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,14 +10,14 @@ import java.util.regex.Pattern;
 public class PrivateChatHandler extends ListenerAdapter {
 	
 	@Override
-	public void onPrivateMessageReceived(@NotNull PrivateMessageReceivedEvent event) {
+	public void onMessageReceived(@NotNull MessageReceivedEvent event) {
 		if(event.getAuthor().isBot()) return;
 		try {
 			Matcher m = Pattern.compile("\\d+[dD]\\d+").matcher(event.getMessage().getContentRaw());
 			if(m.find()) {
 				String s = event.getMessage().getContentRaw().substring(m.start(),m.end());
 				String[] ss = s.split("[dD]");
-				if(ss.length != 2) throw new Exception(s + " did somehow pass regex \"\\d+[dD]\\d+\" but fail \nString s = event.getMessage().getContentRaw().substring(m.start(),m.end());\nString[] ss = s.split(\"[dD]\");\n");
+				if(ss.length != 2) throw new Exception("Tell Becher about this.");
 				StringBuilder results = new StringBuilder("You rolled a [").append(s).append("]```");
 				int maxValue = Integer.parseInt(ss[1]);
 				int dices = Integer.parseInt(ss[0]);

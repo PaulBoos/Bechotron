@@ -2,9 +2,9 @@ package Modules.SlashCommands;
 
 import Head.GuildInstance;
 import Modules.Module;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
-import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import org.jetbrains.annotations.NotNull;
@@ -12,8 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SlashModule extends ListenerAdapter implements Module {
 	
@@ -29,9 +27,9 @@ public class SlashModule extends ListenerAdapter implements Module {
 		this.commands = new ArrayList<>();
 		this.commandData = new ArrayList<>();
 	}
-
+	
 	@Override
-	public void onSlashCommand(@NotNull SlashCommandEvent event) {
+	public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
 		//Only This Guild's slash commands
 		if(event.getGuild().getIdLong() != instance.guild) return;
 		System.out.println("Slash Command Received! " + event.getName());

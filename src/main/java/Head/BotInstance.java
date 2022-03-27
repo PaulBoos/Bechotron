@@ -1,6 +1,9 @@
 package Head;
 
 import Files.ConfigReader;
+import Modules.DeutscheBahn.DBModule;
+import Modules.Fun.PrivateChannels;
+import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -72,12 +75,15 @@ public class BotInstance {
 		jda.awaitReady();
 		setPresence();
 		createGuilds(false);
+		new DBModule(jda);
 		new MusicModule();
 		jda.addEventListener(new PrivateChatHandler());
+		new ShipperModule(jda);
+		PrivateChannels.fixPrivateChannels(jda, 739513862449266729L);
 	}
 	
 	public void setPresence() {
-		jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.of(Activity.ActivityType.DEFAULT, "Now with SLASH COMMANDS!"));
+		jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.of(Activity.ActivityType.PLAYING, " Factorio with your mom"));
 	}
 	
 	public void createGuilds(boolean log) {

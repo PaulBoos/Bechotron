@@ -7,6 +7,7 @@ import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+import net.dv8tion.jda.api.entities.AudioChannel;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.VoiceChannel;
@@ -42,7 +43,7 @@ public class MusicManager extends ListenerAdapter {
 		return musicManager;
 	}
 	
-	public void loadAndPlay(final TextChannel channel, final VoiceChannel vchannel, final String trackUrl) {
+	public void loadAndPlay(final TextChannel channel, final AudioChannel vchannel, final String trackUrl) {
 		GuildMusicManager musicManager = getGuildAudioPlayer(channel.getGuild());
 		
 		playerManager.loadItemOrdered(musicManager, trackUrl, new AudioLoadResultHandler() {
@@ -78,13 +79,13 @@ public class MusicManager extends ListenerAdapter {
 		});
 	}
 	
-	private void play(Guild guild, GuildMusicManager musicManager, AudioTrack track, VoiceChannel vChannel) {
+	private void play(Guild guild, GuildMusicManager musicManager, AudioTrack track, AudioChannel vChannel) {
 		connectToVoiceChannel(guild.getAudioManager(), vChannel);
 		
 		musicManager.scheduler.queue(track);
 	}
 	
-	private void connectToVoiceChannel(AudioManager audioManager, VoiceChannel vChannel) {
+	private void connectToVoiceChannel(AudioManager audioManager, AudioChannel vChannel) {
 		if (!audioManager.isConnected()) {
 			audioManager.openAudioConnection(vChannel);
 		}

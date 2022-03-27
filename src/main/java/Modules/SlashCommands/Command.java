@@ -2,13 +2,14 @@ package Modules.SlashCommands;
 
 import Modules.Music.MusicModule;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.*;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -89,7 +90,7 @@ public enum Command {
 				switch(event.getOption("action").getAsString()) {
 					case "play" -> {
 						event.deferReply().queue();
-						VoiceChannel vc = event.getMember().getVoiceState().getChannel();
+						AudioChannel vc = event.getMember().getVoiceState().getChannel();
 						TextChannel tc = event.getTextChannel();
 						String url = event.getOption("url").getAsString();
 						MusicModule.manager.loadAndPlay(tc, vc, url);
@@ -117,7 +118,7 @@ public enum Command {
 						case OFFLINE -> description.append("\n\u26AA Offline");
 						default -> description.append("\n\u2754 Unknown");
 					}
-					if(target.getVoiceState().inVoiceChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
+					if(target.getVoiceState().inAudioChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
 
 				}
 				event.replyEmbeds(new EmbedBuilder()
@@ -177,7 +178,7 @@ public enum Command {
 	private final SlashExecutor slashExecutor;
 	private final TextExecutor textExecutor;
 	private final String command, textCommand, description;
-	private final CommandData commandData;
+	private final CommandDataImpl commandData;
 	
 	Command(String command, String description, SlashExecutor slashExecutor, String textCommand, TextExecutor textExecutor, OptionData... optionData) {
 		this.command = command;
@@ -186,7 +187,7 @@ public enum Command {
 		this.slashExecutor = slashExecutor;
 		this.textExecutor = textExecutor;
 		
-		commandData = new CommandData(command, description);
+		commandData = new CommandDataImpl(command, description);
 		for(OptionData od: optionData) commandData.addOption(od.getType(), od.getName(), od.getDescription(), od.isRequired());
 	}
 	
@@ -197,7 +198,7 @@ public enum Command {
 		this.slashExecutor = slashExecutor;
 		this.textExecutor = null;
 		
-		this.commandData = new CommandData(command, description);
+		this.commandData = new CommandDataImpl(command, description);
 		for(OptionData od: optionData) commandData.addOption(od.getType(), od.getName(), od.getDescription(), od.isRequired());
 	}
 	
@@ -222,7 +223,7 @@ public enum Command {
 		this.commandData = null;
 	}
 	
-	public void execute(@NotNull SlashCommandEvent event) {
+	public void execute(@NotNull SlashCommandInteractionEvent event) {
 		try {
 			slashExecutor.execute(event);
 		} catch(Permission.NoPermissionException e) {
@@ -232,7 +233,7 @@ public enum Command {
 			e.printStackTrace();
 		}
 	}
-	public void execute(@NotNull GuildMessageReceivedEvent event) {
+	public void execute(@NotNull MessageReceivedEvent event) {
 		try {
 			textExecutor.execute(event);
 		} catch(Permission.NoPermissionException e) {
@@ -282,12 +283,12 @@ public enum Command {
 	
 	public interface SlashExecutor {
 		
-		void execute(@NotNull SlashCommandEvent event) throws CommandException;
+		void execute(@NotNull SlashCommandInteractionEvent event) throws CommandException;
 		
 	}
 	public interface TextExecutor {
 		
-		void execute(@NotNull GuildMessageReceivedEvent event) throws CommandException;
+		void execute(@NotNull MessageReceivedEvent event) throws CommandException;
 		
 	}
 	

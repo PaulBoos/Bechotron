@@ -1,10 +1,12 @@
 package Head;
 
 import Files.ConfigReader;
+import Modules.Admin.GlobalBanlist;
 import Modules.DeutscheBahn.DBModule;
-import Modules.Fun.PrivateChannels;
 import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
+import Modules.TestModule.Test;
+import Modules.UrbanDictionary.UrbanDictionaryModule;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -74,12 +76,15 @@ public class BotInstance {
 		).build();
 		jda.awaitReady();
 		setPresence();
+		new GlobalBanlist(this);
+		new Test(this);
 		createGuilds(false);
 		new DBModule(jda);
 		new MusicModule();
 		jda.addEventListener(new PrivateChatHandler());
 		new ShipperModule(jda);
-		PrivateChannels.fixPrivateChannels(jda, 739513862449266729L);
+		new UrbanDictionaryModule(jda);
+		
 	}
 	
 	public void setPresence() {

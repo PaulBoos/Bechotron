@@ -18,6 +18,11 @@ public class ShipperModule implements Module {
 		jda.addEventListener(new ShipMessageReceiver());
 	}
 	
+	@Override
+	public String getDescription() {
+		return "Love is in the air!";
+	}
+	
 	private class ShipMessageReceiver extends ListenerAdapter {
 		
 		//💕
@@ -37,7 +42,7 @@ public class ShipperModule implements Module {
 			if(!event.isFromGuild())
 				return;
 			if(event.getMessage().getContentRaw().startsWith("ship ")) {
-				List<User> mentions = event.getMessage().getMentionedUsers();
+				List<User> mentions = event.getMessage().getMentions().getUsers();
 				if(mentions.size() == 2) {
 					float compatibility = calculateCompatibility(mentions.get(0).getIdLong(), mentions.get(1).getIdLong());
 					event.getChannel().sendMessageEmbeds(new EmbedBuilder()
@@ -182,7 +187,7 @@ public class ShipperModule implements Module {
 								**This Guild**'s antimatter-matter non-lovers are %s %s %s with a love-factor of %.2f%%
 								
 								**This Guild**'s most likeable member is %s with an average %s-factor of %.2f%%
-								**This Guild**'s most charmless member is %s with an average %s-factor of %.2f%%
+								**This Guild**'s least charming member is %s with an average %s-factor of %.2f%%
 								""",
 						highScoreA.getAsMention(), highScoreValue > 0 ? LOVE_CHAR : HATE_CHAR, highScoreB.getAsMention(), highScoreValue,
 						lowScoreA.getAsMention(), lowScoreValue > 0 ? LOVE_CHAR : HATE_CHAR, lowScoreB.getAsMention(), lowScoreValue,

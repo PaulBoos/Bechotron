@@ -12,6 +12,7 @@ public class PrivateChatHandler extends ListenerAdapter {
 	@Override
 	public void onMessageReceived(@NotNull MessageReceivedEvent event) {
 		if(event.getAuthor().isBot()) return;
+		int sum = 0;
 		try {
 			Matcher m = Pattern.compile("\\d+[dD]\\d+").matcher(event.getMessage().getContentRaw());
 			if(m.find()) {
@@ -23,10 +24,9 @@ public class PrivateChatHandler extends ListenerAdapter {
 				int dices = Integer.parseInt(ss[0]);
 				if(dices < 1 || maxValue < 2) {
 					event.getChannel().sendMessage("[" + s + "] makes no sense.").queue();
-					throw new Exception("Not important");
+					return;
 				}
 				int[] values = new int[dices];
-				int sum = 0;
 				for(int i = 0; i < dices; i++) {
 					values[i] = (int) (Math.random() * (maxValue)) + 1;
 					sum += values[i];
@@ -36,17 +36,13 @@ public class PrivateChatHandler extends ListenerAdapter {
 				results.append("```");
 				results.insert(results.indexOf(s) + s.length() + 1," {Sum: " + sum + "}");
 				event.getChannel().sendMessage(results).queue();
+				System.out.println("[" + event.getAuthor().getIdLong() + "] " + event.getAuthor().getName() + " rolled a " + m.group() + " and got: " + sum);
 			}
 		} catch(Exception e) {
-			switch(e.getMessage()) {
-				case "Provided text for message must be less than 2000 characters in length":
-					event.getChannel().sendMessage("As the compiled Message would be above 2000 Characters, I cannot send it.").queue();
-					break;
-				case "Not important":
-					break;
-				default:
-					e.printStackTrace();
-					break;
+			if(e.getMessage().equals("Provided text for message must be less than 2000 characters in length")) {
+				event.getChannel().sendMessage("Your Sum is " + sum).queue();
+			} else {
+				event.getChannel().sendMessage(e.getMessage()).queue();
 			}
 		}
 	}

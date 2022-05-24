@@ -1,74 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Old Code Merge">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/db_fahrplan_api_client_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_27_2_1__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/guild/574505655768186880.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/guild/824940958096424991.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/DBModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/Arrival.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/Departure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/JourneyStop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/Station.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/GetArrivalsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/GetDeparturesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/GetStationsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/Journey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Fun/PrivateChannels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Fun/ShipperModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/Exceptions/WerewolfException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/Exceptions/WerewolfRuntimeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/RoundState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/WerewolfGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/WerewolfPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/Werwolf/WerewolfRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Steam/Requester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/StringAnalyser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Time/DayTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/globalbans.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Admin/BanlistModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Admin/GlobalBanlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/GlobalModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Steam/SteamDBRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/TestModule/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/UrbanDictionary/UDEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/UrbanDictionary/UrbanDictionaryModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/DayTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/06d74281-75d3-45be-8466-c0bfcfc860db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06d74281-75d3-45be-8466-c0bfcfc860db.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60aae942-f0bc-4077-9c8a-cdeb5e0c3c48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60aae942-f0bc-4077-9c8a-cdeb5e0c3c48.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_27_2_1__2_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Head/BotCommands.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Head/GuildInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/GuildInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Head/PrivateChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/PrivateChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Games/Skull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Games/SkullGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/dbAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/DBModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/DBModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/JourneyStop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Objects/JourneyStop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/Responses/Journey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Fun/ShipperModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Fun/ShipperModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Module.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Files/ConfigReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Files/ConfigReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Files/botDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Files/botDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Files/logger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Files/logger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Head/BotCommands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/Time/DayTime.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Head/GuildInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/GuildInstance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Head/MessageComposure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/MessageComposure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Head/PrivateChatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/PrivateChatHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Head/dbAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/dbAccess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/Module.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Module.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/AudioPlayerSendHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/AudioPlayerSendHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/GuildMusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/GuildMusicManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/TrackScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/TrackScheduler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command$SlashExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command$SlashExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command$TextExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command$TextExecutor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/CommandException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission$NoPermissionException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission$NoPermissionException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Permission.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +59,7 @@
         <option value="package-info" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -98,12 +76,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Head/BotInstance.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Head/PrivateChatHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/DBModule.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Modules/Games/SkullGame.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Modules/Steam/Requester.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Modules/Games/SkullGame.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Head/BotInstance.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn/DBModule.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1tXOcBE4cyjPpklhgzRzxnjmZBZ" />
   <component name="ProjectLevelVcsManager">
@@ -113,30 +94,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="sqlite" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Modules/DeutscheBahn" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.59195405" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron\src\main\java\Modules\DeutscheBahn" />
       <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron" />
       <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron\src\main\java" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
@@ -170,13 +143,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SteamDBRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Modules.Steam.SteamDBRenderer" />
+      <module name="Bechotron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Modules.Steam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.BotInstance" />
       <item itemvalue="Application.Requester" />
+      <item itemvalue="Application.SteamDBRenderer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BotInstance" />
+        <item itemvalue="Application.SteamDBRenderer" />
         <item itemvalue="Application.Requester" />
       </list>
     </recent_temporary>
@@ -227,17 +226,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Old Code Merge" />
     <option name="LAST_COMMIT_MESSAGE" value="Old Code Merge" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="request" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Modules/Admin/GlobalBanlist.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

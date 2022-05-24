@@ -22,6 +22,7 @@ public abstract class dbAccess {
 		}
 	}
 	
+	/*
 	public synchronized long getMember(long user) throws SQLException {
 		connect();
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM memberID WHERE userID = ?");
@@ -58,5 +59,5 @@ public abstract class dbAccess {
 		}
 		return 0L;
 	}
-	
+	*/
 }

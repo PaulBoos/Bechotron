@@ -11,4 +11,8 @@ public class MusicModule implements Module {
 		manager = new MusicManager();
 	}
 	
+	@Override
+	public String getDescription() {
+		return "This module plays back music";
+	}
 }

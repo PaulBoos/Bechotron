@@ -34,6 +34,26 @@ public class Journey {
 		this.notes = notes;
 	}
 	
+	public List<JourneyStop> getRoute() {
+		return route;
+	}
+	
+	public List<LineSection> getNames() {
+		return names;
+	}
+	
+	public List<TypeSection> getType() {
+		return type;
+	}
+	
+	public List<OperatorSection> getOps() {
+		return ops;
+	}
+	
+	public List<Note> getNotes() {
+		return notes;
+	}
+	
 	@Override
 	public String toString() {
 		return "Journey{" +
@@ -46,7 +66,7 @@ public class Journey {
 	}
 	
 	@JacksonXmlRootElement(localName = "Name")
-	private static class LineSection {
+	public static class LineSection {
 		@JacksonXmlProperty(isAttribute = true)
 		protected final String name;
 		@JacksonXmlProperty(isAttribute = true)
@@ -61,10 +81,21 @@ public class Journey {
 		public String toString() {
 			return "\n  LineSection: #" + routeIdxFrom + " [" + name + "] #" + routeIdxTo;
 		}
+		
+		public String getName() {
+			return name;
+		}
+		public int getRouteIdxFrom() {
+			return routeIdxFrom;
+		}
+		public int getRouteIdxTo() {
+			return routeIdxTo;
+		}
+		
 	}
 	
 	@JacksonXmlRootElement(localName = "Type")
-	private static class TypeSection {
+	public static class TypeSection {
 		@JacksonXmlProperty(isAttribute = true)
 		protected final String type;
 		@JacksonXmlProperty(isAttribute = true)
@@ -79,10 +110,21 @@ public class Journey {
 		public String toString() {
 			return "\n  TypeSection: #" + routeIdxFrom + " [" + type + "] #" + routeIdxTo;
 		}
+		
+		public String getType() {
+			return type;
+		}
+		public int getRouteIdxFrom() {
+			return routeIdxFrom;
+		}
+		public int getRouteIdxTo() {
+			return routeIdxTo;
+		}
+		
 	}
 	
 	@JacksonXmlRootElement(localName = "Operator")
-	private static class OperatorSection {
+	public static class OperatorSection {
 		@JacksonXmlProperty(isAttribute = true)
 		protected final String name;
 		@JacksonXmlProperty(isAttribute = true)
@@ -97,9 +139,20 @@ public class Journey {
 		public String toString() {
 			return "\n  Operator: #" + routeIdxFrom + " [" + name + "] #" + routeIdxTo;
 		}
+		
+		public String getName() {
+			return name;
+		}
+		public int getRouteIdxFrom() {
+			return routeIdxFrom;
+		}
+		public int getRouteIdxTo() {
+			return routeIdxTo;
+		}
+		
 	}
 	
-	private static class Note {
+	public static class Note {
 		@JacksonXmlProperty(isAttribute = true)
 		protected String key;
 		@JacksonXmlProperty(isAttribute = true)
@@ -107,20 +160,26 @@ public class Journey {
 		@JacksonXmlText
 		protected String note;
 		
-		/*
-		@ConstructorProperties({"key", "priority", "routeIdxFrom", "routeIdxTo", "note"})
-		private Note(String key, int priority, int routeIdxFrom, int routeIdxTo, String note) {
-			this.key = key;
-			this.priority = priority;
-			this.routeIdxFrom = routeIdxFrom;
-			this.routeIdxTo = routeIdxTo;
-			this.note = note;
-		}*/
-		
 		@Override
 		public String toString() {
-			return "\n  Note: [key=" + key + ", " + routeIdxFrom + " - " + routeIdxTo + ", priority=" + priority + "]\n    \""
-					+ note + "\"";
+			return "\n  Note: [key=" + key + ", " + routeIdxFrom + " - " + routeIdxTo + ", priority=" + priority + "]\n    \"" + note + "\"";
 		}
+		
+		public String getKey() {
+			return key;
+		}
+		public int getRouteIdxFrom() {
+			return routeIdxFrom;
+		}
+		public int getRouteIdxTo() {
+			return routeIdxTo;
+		}
+		public int getPriority() {
+			return priority;
+		}
+		public String getNote() {
+			return note;
+		}
+		
 	}
 }

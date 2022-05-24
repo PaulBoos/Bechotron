@@ -1,10 +1,12 @@
 package Modules.SlashCommands;
 
 import Head.GuildInstance;
+import Modules.GlobalModule;
 import Modules.Module;
+import Modules.UrbanDictionary.UrbanDictionaryModule;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import org.jetbrains.annotations.NotNull;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class SlashModule extends ListenerAdapter implements Module {
+public class SlashModule extends ListenerAdapter implements GlobalModule {
 	
 	public final GuildInstance instance;
 	public final CommandDB db;
@@ -46,33 +48,34 @@ public class SlashModule extends ListenerAdapter implements Module {
 	}
 	
 	public void updateSlashCommands(boolean updateDiscord) {
-		//addCommands();//TODO add Commands to be activated
-		
-		if(instance.guild == 730778264880152698L) {
-			//addCommands(Command.ping,Command.say);
+		addCommands(UrbanDictionaryModule.URBAN);
+		if(instance.guild == 607323699065913345L) { //KdS
+			addCommands(Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
 		if(instance.guild == 739513862449266729L) { //BTS
-			addCommands(Command.memberinfo, Command.delete);
+			addCommands(Command.MEMBERINFO, Command.DELETE);
 		}
 		if(instance.guild == 652967667946225667L) { //J4F
-			addCommands(Command.memberinfo, Command.avatar, Command.music, Command.vip);
+			addCommands(Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
 		if(instance.guild == 795777477627609153L) { //Garry
 			//addCommands(Command.timeout);
 		}
 		if(instance.guild == 328874791669071882L) {
-			addCommands(Command.memberinfo);
+			addCommands(Command.MEMBERINFO);
 		}
 		if(updateDiscord) {
 			CommandListUpdateAction updater = instance.bot.jda.getGuildById(instance.guild).updateCommands();
 			
 			System.out.println(instance.guild);
-			if(!commandData.isEmpty()) updater.addCommands(commandData).complete();
+			try {
+				if(!commandData.isEmpty()) updater.addCommands(commandData).complete();
+			} catch(ErrorResponseException ignored) {}
 		}
 		
 		//System.out.println("Updated Commands. (" + guild + ")");
 	}
-	private void addCommands(Command... command) {
+	public void addCommands(Command... command) {
 		for(Command c: command) {
 			commands.add(c);
 			commandData.add(c.init());

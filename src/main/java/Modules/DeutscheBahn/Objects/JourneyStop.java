@@ -34,6 +34,38 @@ public class JourneyStop {
 		try {this.depInstant = Instant.parse(depDate + "T" + depTime + ":00.000Z");} catch(DateTimeParseException ignored) {}
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
+	public float getLon() {
+		return lon;
+	}
+	
+	public float getLat() {
+		return lat;
+	}
+	
+	public String getTrack() {
+		return track;
+	}
+	
+	public Instant getArrInstant() {
+		return arrInstant;
+	}
+	
+	public Instant getDepInstant() {
+		return depInstant;
+	}
+	
+	public int getRouteIndex() {
+		return routeIndex;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
 	@Override
 	public String toString() {
 		return "JourneyStop{" +

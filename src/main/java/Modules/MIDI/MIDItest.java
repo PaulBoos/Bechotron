@@ -6,9 +6,12 @@ import java.util.*;
 
 public class MIDItest {
 	
-	public static void main(String[] args) throws MidiUnavailableException {
+	public static void main(String[] args) throws MidiUnavailableException, InvalidMidiDataException {
 		
 		MIDItest player = new MIDItest();
+		
+		int note = 10;
+		int instrument = 10;
 		
 //		Scanner in = new Scanner(System.in);
 //		System.out.println("Enter the instrument to be played");
@@ -18,14 +21,29 @@ public class MIDItest {
 		
 		
 		MidiDevice.Info[] info = MidiSystem.getMidiDeviceInfo();
-		MidiDevice device;
-		for(MidiDevice.Info i: info)
-			if(i.getName().equals("Gervill"))
+		MidiDevice device = null;
+		for(MidiDevice.Info i: info) {
+			System.out.printf("%s\n| %s\n| Vendor: %s\n| Version: %s\n", i.getName(), i.getDescription(), i.getVendor(), i.getVersion());
+			if(i.getName().equals("MIDI function")) {
 				device = MidiSystem.getMidiDevice(i);
+				break;
+			}
+		}
+		
+		if(device != null) {
+			device.open();
+			Receiver rec = device.getReceiver();
+			ShortMessage msg = new ShortMessage();
+			msg.setMessage(ShortMessage.NOTE_ON, 1, 1, 1);
+			rec.send(msg, -1);
+		}
 		
 		
 		
-		/*
+		
+		
+		
+		
 		try {
 			
 			Sequencer sequencer = MidiSystem.getSequencer();
@@ -52,6 +70,8 @@ public class MIDItest {
 			sequencer.setSequence(sequence);
 			sequencer.start();
 			
+			
+			
 			while (true) {
 				
 				if (!sequencer.isRunning()) {
@@ -63,11 +83,10 @@ public class MIDItest {
 		catch (Exception ex) {
 			
 			ex.printStackTrace();
-		}*/
+		}
 	}
 	
-	public static MidiEvent makeEvent(int command, int channel,
-							   int note, int velocity, int tick)
+	public static MidiEvent makeEvent(int command, int channel, int note, int velocity, int tick)
 	{
 		
 		MidiEvent event = null;

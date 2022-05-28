@@ -11,8 +11,6 @@ public interface CrusaderEntity {
 		return "";
 	}
 	
-	default CrusaderEntity deserialize(String input) throws JsonProcessingException {
-		return mapper.readValue(input, this.getClass());
-	}
+	
 	
 }

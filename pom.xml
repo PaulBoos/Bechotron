@@ -34,7 +34,7 @@
     </repositories>
 
     <dependencies>
-        <!--
+
             <dependency>
                 <groupId>fr.bmartel</groupId>
                 <artifactId>jspeedtest</artifactId>
@@ -69,7 +69,7 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.8-dmr</version>
-            </dependency>-->
+            </dependency>
 
         <!-- SEDMELLUQ'S LAVAPLAYER -->
         <dependency>

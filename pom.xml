@@ -31,45 +31,63 @@
             <name>JCenter</name>
             <url>https://jcenter.bintray.com</url>
         </repository>
+
+        <!-- Repository Used for CMUSphinx -->
+        <repository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
+        <!-- SPEECH RECOGNITION SOFTWARE - CMUSphinx -->
+        <dependency>
+            <groupId>edu.cmu.sphinx</groupId>
+            <artifactId>sphinx4-core</artifactId>
+            <version>5prealpha-SNAPSHOT</version>
+        </dependency>
 
-            <dependency>
-                <groupId>fr.bmartel</groupId>
-                <artifactId>jspeedtest</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>com.moandjiezana.toml</groupId>
-                <artifactId>toml4j</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mashape.unirest</groupId>
-                <artifactId>unirest-java</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>org.brunocvcunha.jiphy</groupId>
-                <artifactId>jiphy</artifactId>
-                <version>LATEST</version>
-            </dependency>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.8-dmr</version>
-            </dependency>
+        <dependency>
+            <groupId>fr.bmartel</groupId>
+            <artifactId>jspeedtest</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>com.moandjiezana.toml</groupId>
+            <artifactId>toml4j</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.brunocvcunha.jiphy</groupId>
+            <artifactId>jiphy</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.8-dmr</version>
+        </dependency>
 
         <!-- SEDMELLUQ'S LAVAPLAYER -->
         <dependency>
@@ -146,7 +164,6 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>LATEST</version>
         </dependency>
-
     </dependencies>
 
     <properties>

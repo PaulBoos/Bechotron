@@ -8,8 +8,313 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsapi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/RecognizerMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/SpeechMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/Client.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/EmacspeakServer.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/FreeTTSEmacspeakServer.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/FreeTTSHelloWorld.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/HelloWorld.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/JTime.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/MixedVoices.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/Player.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/Server.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/bin/WebStartClock.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/ContributorsAgreement.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/FreeTTSStuff.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/FreeTTS_handout.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/FreeTTS_handout.sxw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/ProgrammerGuide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/12-35.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/12-35.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/complex.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/complex.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/cookiecooks.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/cookiecooks.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/shoeshineshop.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/shoeshineshop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/talkforever.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/talkforever.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/talkforever16.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/talkforever16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/thanks.au" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/audio/thanks.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/create_php.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/emacspeak_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/html_copyright.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/TinyWebStartClock.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/img9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/images/speaker1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/jsapi_setup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/mixedsource_copyright.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/release_checklist.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/shell_copyright.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/source_copyright.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/docs/utterance.sxd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/BaseAudioManager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/BaseEngine.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/BaseEngineProperties.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/EngineEventPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/EngineMonitor.EngineMonitorEngineListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/EngineMonitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/SpeechEventDispatcher.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/SpeechEventUtilities.SpeechAWTEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/SpeechEventUtilities.SpeechAWTEventTarget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/SpeechEventUtilities.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/SpeechEventWrapper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/BaseSynthesizer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/BaseSynthesizerProperties.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/BaseSynthesizerQueueItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/BaseVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/JSMLParser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/SynthesizerMonitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/SynthesizerSelector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/VoiceList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/TextEngineCentral.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/TextSynthesizer.OutputHandler.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/TextSynthesizer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/TextSynthesizerModeDesc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/TextSynthesizerQueueItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/engine/synthesis/text/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Age.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Dumpable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FeatureProcessor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FeatureSet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FeatureSetImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FreeTTS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FreeTTSSpeakable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FreeTTSSpeakableImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/FreeTTSTime.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Gender.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/InputMode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/ItemContents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/OutputQueue.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PartOfSpeech.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PartOfSpeechImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PathExtractor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PathExtractorImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PhoneDuration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PhoneDurations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PhoneDurationsImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PhoneSet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/PhoneSetImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/ProcessException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Relation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Segmenter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Token.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Tokenizer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Unit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Utterance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/UtteranceProcessor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/ValidationException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Validator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/Voice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/VoiceDirectory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/VoiceManager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/AudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/JavaClipAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/JavaStreamingAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/MultiFile8BitAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/MultiFileAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/NullAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/RawFileAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/SingleFileAudioPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/audio/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/CART.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/CARTImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/Durator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/Intonator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/Phraser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/cart/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/ClusterUnitDatabase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/ClusterUnitPitchmarkGenerator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/ClusterUnitSelector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/clunits/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/AliasDiphone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/Diphone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/DiphonePitchmarkGenerator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/DiphoneUnitDatabase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/DiphoneUnitSelector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/diphone/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/ContourGenerator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/PartOfSpeechTagger.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/PauseGenerator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/PostLexicalAnalyzer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/TokenizerImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUArcticVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUClusterUnitVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUDiphoneVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMULexicon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUTimeLexicon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUTimeVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/CMUVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.Accented.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.AccentedSylIn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.Gpos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.LastAccent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.MonthRange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.NumDigits.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_CPlace.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_CType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_CVox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_VC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_VFront.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_VHeight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_VLength.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PH_VRnd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PosInSyl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.PositionType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegCodaFric.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegCodaGlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegCodaNasal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegCodaStop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegOnsetCoda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegOnsetFric.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegOnsetGlide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegOnsetNasal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegOnsetStop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SegmentDuration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.StressedSylIn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.StressedSylOut.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SubPhrases.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SylBreak.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SylCodaSize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SylIn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SylOnsetSize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.SylOut.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.TokenPosGuess.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.WordBreak.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.WordNumSyls.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.WordPunc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/FeatureProcessors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/NumberExpander.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/PrefixFSM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/PronounceableFSM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/SuffixFSM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/TokenToWords.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/USEnglish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/WordRelation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/en/us/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/FreeTTSEngineCentral.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/FreeTTSSynthesizer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/FreeTTSSynthesizerModeDesc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/FreeTTSSynthesizerQueueItem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/FreeTTSVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/jsapi/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/LetterToSound.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/LetterToSoundImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/Lexicon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/LexiconImpl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/lexicon/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/AudioOutput.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/LPCResult.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/Sample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/SampleInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/SampleSet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/UnitConcatenator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/relp/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/BulkTimer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/SegmentRelationUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/Timer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/Utilities.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/WaveUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/com/sun/speech/freetts/util/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/MbrolaVoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/MbrolaVoiceDirectory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/MbrolaVoiceValidator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/en/us/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/MbrolaAudioOutput.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/MbrolaCaller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/ParametersToMbrolaConverter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/de/dfki/lt/freetts/mbrola/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/index-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/packages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/resources/inherit.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/javadoc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/cmu_time_awb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/cmu_us_kal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/cmudict04.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/cmulex.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/cmutimelex.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/en_us.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/freetts-jsapi10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/freetts.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/jsapi.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/mbrola.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/lib/voices.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/mbrola/README.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/mbrola/mbrola.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/src/speech.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/MIDI/MIDItest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/MIDI/MIDItest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +326,8 @@
       <list>
         <option value="package-info" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,17 +362,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/LordBecher/Documents/GitHub/Bechotron/src/main/java/Modules/Speech/src",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron\src\main\java\Modules\Speech\src" />
       <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron\src\main\java\Modules\DeutscheBahn" />
       <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron" />
     </key>
@@ -79,7 +386,7 @@
       <recent name="Modules.Games.Werwolf" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MIDItest">
+  <component name="RunManager" selected="Application.RecognizerMain">
     <configuration name="BotInstance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Head.BotInstance" />
       <module name="Bechotron" />
@@ -106,12 +413,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Requester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Modules.Steam.Requester" />
+    <configuration name="RecognizerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Modules.Speech.RecognizerMain" />
       <module name="Bechotron" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Modules.Steam.*" />
+          <option name="PATTERN" value="Modules.Speech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpeechMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Modules.Speech.SpeechMain" />
+      <module name="Bechotron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Modules.Speech.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,17 +464,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.RecognizerMain" />
+      <item itemvalue="Application.SpeechMain" />
       <item itemvalue="Application.MIDItest" />
       <item itemvalue="Application.BotInstance" />
-      <item itemvalue="Application.Requester" />
       <item itemvalue="Application.SteamDBRenderer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MIDItest" />
+        <item itemvalue="Application.RecognizerMain" />
+        <item itemvalue="Application.SpeechMain" />
         <item itemvalue="Application.BotInstance" />
+        <item itemvalue="Application.MIDItest" />
         <item itemvalue="Application.SteamDBRenderer" />
-        <item itemvalue="Application.Requester" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653426459763</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MIDI Push #1">
+      <created>1653429070938</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653429070938</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +555,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Old Code Merge" />
     <MESSAGE value="Sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sync" />
+    <MESSAGE value="MIDI Push #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="MIDI Push #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

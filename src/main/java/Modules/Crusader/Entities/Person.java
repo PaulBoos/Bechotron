@@ -1,5 +1,6 @@
 package Modules.Crusader.Entities;
 
+import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -22,7 +23,7 @@ public class Person implements CrusaderEntity {
 	}
 	
 	
-	public static Person deserialize(String input) throws JsonProcessingException {
+	public static Person deserialize(String input) throws JacksonException {
 		return mapper.readValue(input, Person.class);
 	}
 	

@@ -2,7 +2,6 @@ package Modules.Crusader;
 
 import Modules.Crusader.Entities.Person;
 import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 public class CrusaderTest {
 	
@@ -14,6 +13,7 @@ public class CrusaderTest {
 		Person d = Person.deserialize(xml);
 //		Person p = new Person("Testperson", "Peter", "that dude");
 		System.out.println(d);
+		System.out.println(d.serialize());
 		
 	}
 	

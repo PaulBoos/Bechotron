@@ -45,10 +45,7 @@ public class Person implements CrusaderEntity {
 	
 	@Override
 	public String toString() {
-		return "Character{" +
-				"name='" + name + '\'' +
-				", prenom='" + prenom + '\'' +
-				'}';
+		return String.format("Character {\n| name=\"%s\",\n| prenom=\"%s\",\n| nickname=\"%s\" }", name, prenom, nickname);
 	}
 	
 }

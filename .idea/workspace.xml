@@ -7,13 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Old Code Merge">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Train sync #4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,13 +51,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1tXOcBE4cyjPpklhgzRzxnjmZBZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -72,6 +62,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/LordBecher/Documents/GitHub/Bechotron/src/main/java/Modules/Speech/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -229,6 +220,7 @@
       <workItem from="1634290003314" duration="554000" />
       <workItem from="1634290606408" duration="24000" />
       <workItem from="1634290645508" duration="750000" />
+      <workItem from="1653923034157" duration="7584000" />
     </task>
     <task id="LOCAL-00001" summary="Old Code Merge">
       <created>1622912597487</created>
@@ -251,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653429070938</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Train sync #4">
+      <created>1653923280051</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653923280052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +272,8 @@
     <MESSAGE value="Old Code Merge" />
     <MESSAGE value="Sync" />
     <MESSAGE value="MIDI Push #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="MIDI Push #1" />
+    <MESSAGE value="Train sync #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Train sync #4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

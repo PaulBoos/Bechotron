@@ -7,7 +7,7 @@ public class BanlistModule extends ListenerAdapter implements Module {
 	
 	@Override
 	public String getDescription() {
-		return "";
+		return "This module bans accounts present on your banlist.";
 	}
 	
 }

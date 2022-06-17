@@ -162,7 +162,8 @@ public class Command {
 			event -> {
 				event.reply("Okay!").complete();
 				event.getOption("target").getAsMember().deafen(true).complete();
-				event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong(), TimeUnit.MINUTES);
+				event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong(), TimeUnit.SECONDS);
+				event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong() + 10, TimeUnit.SECONDS);
 				},
 			new OptionData(
 					USER,
@@ -172,7 +173,7 @@ public class Command {
 			new OptionData(
 					INTEGER,
 					"time",
-					"how long (in minutes)"
+					"how long (in seconds)"
 			)
 	);
 	
@@ -272,7 +273,7 @@ public class Command {
 					StringBuilder sb = new StringBuilder();
 					for(Permission perm: perms) sb.append(perm.sign).append(", ");
 					sb.delete(sb.length()-2,sb.length()-1);
-					throw new Permission.NoPermissionException("You are not allowed to use this command. Needed Permissions: " + sb.toString());
+					throw new Permission.NoPermissionException("You are not allowed to use this command. Needed Permissions: " + sb);
 				}
 			}
 			return true;
@@ -282,11 +283,13 @@ public class Command {
 		}
 	}
 	
+	
 	public interface SlashExecutor {
 		
 		void execute(@NotNull SlashCommandInteractionEvent event) throws CommandException;
 		
 	}
+	
 	public interface TextExecutor {
 		
 		void execute(@NotNull MessageReceivedEvent event) throws CommandException;

@@ -69,7 +69,7 @@ public class DayTime {
 	
 	@Override
 	public String toString() {
-		return String.format("DayTime(%02d:%02d:%02d.%03d)" + millis, (millis -(millis % 3600_000)) / 3600_000, ((millis % 3600_000) -(millis % 60_000)) / 60_000, ((millis % 60_000) -(millis % 1000)) / 1000, millis % 1000);
+		return String.format("DayTime(%02d:%02d:%02d.%03d)", (millis -(millis % 3600_000)) / 3600_000, ((millis % 3600_000) -(millis % 60_000)) / 60_000, ((millis % 60_000) -(millis % 1000)) / 1000, millis % 1000);
 	}
 	
 	public enum Unit {

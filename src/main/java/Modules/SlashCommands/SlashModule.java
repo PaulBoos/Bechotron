@@ -56,7 +56,7 @@ public class SlashModule extends ListenerAdapter implements GlobalModule {
 			addCommands(Command.MEMBERINFO, Command.DELETE);
 		}
 		if(instance.guild == 652967667946225667L) { //J4F
-			addCommands(Command.MEMBERINFO, Command.AVATAR, Command.VIP);
+			addCommands(Command.DELETE, Command.TIMEOUT, Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
 		if(instance.guild == 795777477627609153L) { //Garry
 			//addCommands(Command.timeout);

@@ -1,3 +1,5 @@
 token
-*.class
-.idea\*
+Bechotron 3.iml
+/src/main/java/Modules/Speech/src/
+/.idea/
+/target/

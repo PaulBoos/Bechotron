@@ -8,9 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Train sync #5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/RecognizerMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/SpeechMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/CrusaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/de_DE.translation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/globalbans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/globalbans.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Admin/BanlistModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Admin/BanlistModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DayTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DayTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

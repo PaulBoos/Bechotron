@@ -18,14 +18,14 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <name>JitPack</name>
-            <url>https://jitpack.io</url>
-        </repository>
-        <repository>
             <id>jcenter</id>
             <name>JCenter</name>
             <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <name>JitPack</name>
+            <url>https://jitpack.io</url>
         </repository>
 
         <!-- Repository Used for CMUSphinx -->
@@ -89,6 +89,16 @@
         <dependency>
             <groupId>com.github.sedmelluq</groupId>
             <artifactId>lavaplayer</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sedmelluq</groupId>
+            <artifactId>lavaplayer-natives-extra</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.walkyst</groupId>
+            <artifactId>lavaplayer-natives-fork</artifactId>
             <version>LATEST</version>
         </dependency>
 

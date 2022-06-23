@@ -18,7 +18,7 @@ public class GuildInstance {
 		this.bot = botInstance;
 		this.guild = guild;
 
-		music = new MusicModule();
+		music = new MusicModule(bot.jda);
 		slash = new SlashModule(this);
 		slash.updateSlashCommands(true);
 		botInstance.jda.addEventListener(slash);

@@ -10,13 +10,12 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.entities.AudioChannel;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MusicManager extends ListenerAdapter {
+public class MusicManager {
 	private final AudioPlayerManager playerManager;
 	private final Map<Long, GuildMusicManager> musicManagers;
 	
@@ -93,8 +92,12 @@ public class MusicManager extends ListenerAdapter {
 	public void skipTrack(TextChannel channel) {
 		GuildMusicManager musicManager = getGuildAudioPlayer(channel.getGuild());
 		musicManager.scheduler.nextTrack(false);
-		
-		channel.sendMessage("Skipped to next track.").queue();
+	}
+	
+	public void stopPlayback(TextChannel channel) {
+		GuildMusicManager musicManager = getGuildAudioPlayer(channel.getGuild());
+		musicManager.scheduler.clearQueue();
+		skipTrack(channel);
 	}
 	
 }

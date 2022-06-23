@@ -80,7 +80,7 @@ public class BotInstance {
 		new Test(this);
 		createGuilds(false);
 		new DBModule(jda);
-		new MusicModule();
+		new MusicModule(jda);
 		jda.addEventListener(new PrivateChatHandler());
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);

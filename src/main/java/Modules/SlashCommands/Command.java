@@ -6,9 +6,9 @@ import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
-import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,156 +25,170 @@ import static net.dv8tion.jda.api.interactions.commands.OptionType.*;
 public class Command {
 	
 	public static final Command
-			SAY = new Command(
-					"say",
-							"Make the Bot say something",
-					event -> {
-				event.reply(event.getOption("message").getAsString()).queue();
-			},
-			"say",
-			event -> {
-				event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "))).queue();
-			},
-					new OptionData(
-					STRING,
-							"message",
-									"What to say"
-			).setRequired(true)
+		SAY = new Command(
+				"say",
+				"Make the Bot say something",
+				event -> {
+					event.reply(event.getOption("message").getAsString()).queue();
+				},
+		"say",
+		event -> {
+			event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "))).queue();
+		},
+				new OptionData(
+				STRING,
+						"message",
+								"What to say"
+		).setRequired(true)
 	),
 	PING = new Command(
 			"ping",
 			"Pong.",
-			event -> {
-				event.reply("Pong.").queue();
-				},
+			event -> event.reply("Pong.").queue(),
 			"Ping!",
-			event -> {
-				event.getChannel().sendMessage("Pong.").queue();
-			}
+			event -> event.getChannel().sendMessage("Pong.").queue()
 	),
 	DELETE = new Command(
-			"delete",
-					"Delete x Messages",
-			event -> {
-		Long i;
-		try {
-			i = event.getOption("count").getAsLong();
-		} catch(Exception e) {
-			i = 1L;
-		}
-		int length = i.intValue();
-		if(length > 100) length = 100;
-		if(length < 0) length = 1;
-		List<Message> history = event.getChannel().getHistoryBefore(event.getInteraction().getIdLong(), length).complete().getRetrievedHistory();
-		if(history.size() < length) length = history.size();
-		List<Message> delete = history.subList(history.size() - length, history.size());
-		if(delete.size() > 1) {
-			for(Message m: delete) {
-				event.getChannel().deleteMessageById(m.getId()).queue();
+		"delete",
+		"Delete x Messages",
+		event -> {
+			Long i;
+			try {
+				i = event.getOption("count").getAsLong();
+			} catch(Exception e) {
+				i = 1L;
 			}
-			event.reply("Deleted " + length + " Messages.").complete().deleteOriginal().completeAfter(10, TimeUnit.SECONDS);
-		} else {
-			delete.get(0).delete().complete();
-			event.reply("Deleted one Message.").complete().deleteOriginal().completeAfter(10, TimeUnit.SECONDS);
-		}
-	},
-			new OptionData(
+			int length = i.intValue();
+			if(length > 100) length = 100;
+			if(length < 0) length = 1;
+			List<Message> history = event.getChannel().getHistoryBefore(event.getInteraction().getIdLong(), length).complete().getRetrievedHistory();
+			if(history.size() < length) length = history.size();
+			List<Message> delete = history.subList(history.size() - length, history.size());
+			if(delete.size() > 1) {
+				for(Message m: delete) {
+					event.getChannel().deleteMessageById(m.getId()).queue();
+				}
+				event.reply("Deleted " + length + " Messages.").complete().deleteOriginal().completeAfter(10, TimeUnit.SECONDS);
+			} else {
+				delete.get(0).delete().complete();
+				event.reply("Deleted one Message.").complete().deleteOriginal().completeAfter(10, TimeUnit.SECONDS);
+			}
+		},
+		new OptionData(
 			INTEGER,
-					"count",
-							"Count of Messages to delete."
-	)
+			"count",
+			"Count of Messages to delete."
+		)
 	),
 	MUSIC = new Command(
-			"music",
-					"Music Controller",
-			event -> {
-		switch(event.getOption("action").getAsString()) {
-			case "play" -> {
-				event.deferReply().queue();
-				AudioChannel vc = event.getMember().getVoiceState().getChannel();
-				TextChannel tc = event.getTextChannel();
-				String url = event.getOption("url").getAsString();
-				MusicModule.manager.loadAndPlay(tc, vc, url);
-				event.getHook().editOriginal("\u25B6 Playing...").queue();
+		"music",
+		event -> {
+			switch(event.getSubcommandName()) {
+				case "play" -> {
+					event.deferReply().queue();
+					AudioChannel vc = event.getMember().getVoiceState().getChannel();
+					TextChannel tc = event.getTextChannel();
+					String url = event.getOption("song").getAsString();
+					MusicModule.manager.loadAndPlay(tc, vc, url);
+					event.getHook().editOriginal("▶ Playing...").queue();
+				}
+				case "skip" -> {
+					event.deferReply().queue();
+					TextChannel tc = event.getTextChannel();
+					MusicModule.manager.skipTrack(tc);
+					event.getHook().editOriginal("⏭ Skipping track!").queue();
+				}
+				case "stop" -> {
+					event.deferReply().queue();
+					TextChannel tc = event.getTextChannel();
+					MusicModule.manager.stopPlayback(tc);
+					event.getHook().editOriginal("⏹ Stopping Playback!").queue();
+				}
+				case "volume" -> {
+				
+				}
 			}
-		}
-	}
+		},
+		"Music Controller",
+		new SubcommandData("play", "Play a song or add it to the playlist.")
+			.addOption(STRING, "song", "what song to add", true),
+		new SubcommandData("stop", "Skip the current song and clear the queue."),
+		new SubcommandData("skip", "Skip the current song."),
+		new SubcommandData("volume", "[WIP] Change the default Volume")
+			.addOption(INTEGER, "volume", "Use a value between 1 - 200%", true)
 	),
 	MEMBERINFO = new Command(
-			"memberinfo",
-					"Tell me something about the member",
-			event -> {
-		OptionMapping o = event.getOption("member");
-		Member target;
-		if(o==null) target = event.getMember(); else target = o.getAsMember();
-		StringBuilder description = new StringBuilder();
-		{
-			assert target != null;
-			if(target.getUser().getName() != target.getEffectiveName())
-				description.append("Handle: ").append(target.getUser().getName());
-			switch(target.getOnlineStatus()) {
-				case ONLINE -> description.append("\n\uD83D\uDFE2 Online");
-				case IDLE -> description.append("\n\uD83D\uDFE1 Idle");
-				case DO_NOT_DISTURB -> description.append("\n\uD83D\uDD34 Do not Disturb");
-				case OFFLINE -> description.append("\n\u26AA Offline");
-				default -> description.append("\n\u2754 Unknown");
+		"memberinfo",
+		"Tell me something about the member",
+		event -> {
+			OptionMapping o = event.getOption("member");
+			Member target;
+			if(o==null) target = event.getMember(); else target = o.getAsMember();
+			StringBuilder description = new StringBuilder();
+			{
+				assert target != null;
+				if(target.getUser().getName() != target.getEffectiveName())
+					description.append("Handle: ").append(target.getUser().getName());
+				switch(target.getOnlineStatus()) {
+					case ONLINE -> description.append("\n\uD83D\uDFE2 Online");
+					case IDLE -> description.append("\n\uD83D\uDFE1 Idle");
+					case DO_NOT_DISTURB -> description.append("\n\uD83D\uDD34 Do not Disturb");
+					case OFFLINE -> description.append("\n\u26AA Offline");
+					default -> description.append("\n\u2754 Unknown");
+				}
+				if(target.getVoiceState().inAudioChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
 			}
-			if(target.getVoiceState().inAudioChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
-			
-		}
-		event.replyEmbeds(new EmbedBuilder()
+			event.replyEmbeds(new EmbedBuilder()
 				.setTitle(target.getEffectiveName())
 				.setDescription(description.toString())
 				.setFooter("Requested by " + event.getMember().getUser().getAsTag() + " #" + event.getMember().getIdLong())
 				.setImage(target.getUser().getAvatarUrl()).build()).complete();
-	},
-			new OptionData(
+		},
+		new OptionData(
 			USER,
-					"member",
-							"Who do you want more information about?"
-	)
+			"member",
+			"Who do you want more information about?"
+		)
 	),
 	AVATAR = new Command(
-			"avatar",
-					"Send the user's Avatar",
-			event -> {
-		event.reply(event.getOption("member").getAsMember().getUser().getAvatarUrl()).queue();
-	}
+		"avatar",
+		"Send the user's Avatar",
+		event -> event.reply(event.getOption("member").getAsMember().getUser().getAvatarUrl()).queue()
 	),
 	VIP = new Command(
-			"vip",
-			"Get / Send someone a VIP ticket!",
-			event -> {
-				event.deferReply().queue();
-				OptionMapping target = event.getOption("target");
-				if(target == null) event.getHook().sendFile(new File("images/vip.png")).queue();
-				else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFile(new File("images/vip.png")).queue();
-				},
-			new OptionData(
-					USER,
-					"target",
-					"Send someone this Ticket!"
-			).setRequired(false)
+		"vip",
+		"Get / Send someone a VIP ticket!",
+		event -> {
+			event.deferReply().queue();
+			OptionMapping target = event.getOption("target");
+			if(target == null) event.getHook().sendFile(new File("images/vip.png")).queue();
+			else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFile(new File("images/vip.png")).queue();
+		},
+		new OptionData(
+			USER,
+			"target",
+			"Send someone this Ticket!"
+		).setRequired(false)
 	),
 	TIMEOUT = new Command(
-			"timeout",
-					"Timeout someone",
-			event -> {
-				event.reply("Okay!").complete();
-				event.getOption("target").getAsMember().deafen(true).complete();
-				event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong(), TimeUnit.SECONDS);
-				event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong() + 10, TimeUnit.SECONDS);
-				},
-			new OptionData(
-					USER,
-					"target",
-					"who"
-			).setRequired(true),
-			new OptionData(
-					INTEGER,
-					"time",
-					"how long (in seconds)"
-			)
+		"timeout",
+		"Timeout someone",
+		event -> {
+			event.reply("Okay!").complete();
+			event.getOption("target").getAsMember().deafen(true).complete();
+			event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong(), TimeUnit.SECONDS);
+			event.getOption("target").getAsMember().deafen(false).completeAfter(event.getOption("time").getAsLong() + 10, TimeUnit.SECONDS);
+		},
+		new OptionData(
+			USER,
+			"target",
+			"who"
+		).setRequired(true),
+		new OptionData(
+			INTEGER,
+			"time",
+			"how long (in seconds)"
+		)
 	);
 	
 	private final SlashExecutor slashExecutor;
@@ -205,16 +219,16 @@ public class Command {
 	}
 	
 	//TODO SUBCOMMAND SUPPORT
-//	Command(String command, String description, SlashExecutor slashExecutor, SubcommandData... subcommandData) {
-//		this.command = command;
-//		this.textCommand = null;
-//		this.description = description;
-//		this.slashExecutor = slashExecutor;
-//		this.textExecutor = null;
-//
-//		this.commandData = new CommandData(command, description);
-//
-//	}
+	public Command(String command, SlashExecutor slashExecutor, String description, SubcommandData... subcommandData) {
+		this.command = command;
+		this.textCommand = null;
+		this.description = description;
+		this.slashExecutor = slashExecutor;
+		this.textExecutor = null;
+		
+		this.commandData = new CommandDataImpl(command, description);
+		commandData.addSubcommands(subcommandData);
+	}
 	
 	public Command(String textCommand, TextExecutor textExecutor) {
 		this.command = null;

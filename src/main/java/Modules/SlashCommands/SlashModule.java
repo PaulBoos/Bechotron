@@ -5,6 +5,7 @@ import Modules.GlobalModule;
 import Modules.Module;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
@@ -41,8 +42,25 @@ public class SlashModule extends ListenerAdapter implements GlobalModule {
 		//hook.setEphemeral(true);
 		
 		for(Command c: commands) {
-			if(c.getCommand().equals(event.getName())) {
+			if(c.getCommand() != null && c.getCommand().equals(event.getName())) {
 				c.execute(event);
+			}
+		}
+	}
+	
+	@Override
+	public void onMessageReceived(@NotNull MessageReceivedEvent event) {
+		//Only This Guild's slash commands
+		if(event.getGuild().getIdLong() != instance.guild) return;
+		
+		//Get Hook
+		//CommandHook hook = event.getHook();
+		//hook.setEphemeral(true);
+		
+		for(Command c: commands) {
+			if(c.getTextCommand() != null && event.getMessage().getContentStripped().startsWith(c.getTextCommand())) {
+				c.execute(event);
+				System.out.println("Text Command Received! " + c.getTextCommand());
 			}
 		}
 	}
@@ -56,7 +74,7 @@ public class SlashModule extends ListenerAdapter implements GlobalModule {
 			addCommands(Command.MEMBERINFO, Command.DELETE);
 		}
 		if(instance.guild == 652967667946225667L) { //J4F
-			addCommands(Command.DELETE, Command.TIMEOUT, Command.MEMBERINFO, Command.AVATAR, Command.VIP);
+			addCommands(Command.PING, Command.MUSIC, Command.DELETE, Command.TIMEOUT, Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
 		if(instance.guild == 795777477627609153L) { //Garry
 			//addCommands(Command.timeout);

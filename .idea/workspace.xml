@@ -3,24 +3,42 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Bechotron:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Train sync #5">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/RecognizerMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Speech/SpeechMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="5a7aac41-d9a0-4bb5-a498-1c8eade8535f" name="Default Changelist" comment="Train sync #7">
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Interpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/JoiningToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/Link.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/PrefixToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/SuffixToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Calculator/Links/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/Suggester/SuggesterModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de_DE.translation" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/globalbans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/globalbans.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Admin/BanlistModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Admin/BanlistModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Crusader/Entities/CrusaderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/BotInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Head/GuildInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Head/GuildInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Music/MusicModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/Music/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/Music/TrackScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SlashCommands/SlashModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DayTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DayTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/BotInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Head/GuildInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Head/GuildInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/MusicModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/MusicModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modules/Music/TrackScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/Music/TrackScheduler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/Command.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modules/SlashCommands/SlashModule.class" afterDir="false" />
     </list>
@@ -33,8 +51,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -62,6 +80,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="1tXOcBE4cyjPpklhgzRzxnjmZBZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -74,20 +95,21 @@
   &quot;keyToString&quot;: {
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LordBecher/Documents/GitHub/Bechotron/src/main/java/Modules/Speech/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/LordBecher/Documents/GitHub/Bechotron&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron" />
       <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron\src\main\java\Modules\Speech\src" />
       <recent name="C:\Users\LordBecher\Documents\GitHub\Bechotron\src\main\java\Modules\DeutscheBahn" />
       <recent name="C:\Users\LordBecher\AppData\Roaming\.minecraft\mods\Bechotron" />
@@ -105,7 +127,7 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CrusaderTest">
+  <component name="RunManager" selected="Application.BotInstance">
     <configuration name="BotInstance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Head.BotInstance" />
       <module name="Bechotron" />
@@ -171,17 +193,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.CrusaderTest" />
       <item itemvalue="Application.RecognizerMain" />
@@ -191,10 +202,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BotInstance" />
         <item itemvalue="Application.CrusaderTest" />
         <item itemvalue="Application.RecognizerMain" />
         <item itemvalue="Application.SpeechMain" />
-        <item itemvalue="Application.BotInstance" />
         <item itemvalue="Application.MIDItest" />
       </list>
     </recent_temporary>
@@ -269,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653941811414</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Train sync #7">
+      <created>1655469694437</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655469694437</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +311,8 @@
     <MESSAGE value="MIDI Push #1" />
     <MESSAGE value="Train sync #4" />
     <MESSAGE value="Train sync #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Train sync #5" />
+    <MESSAGE value="Train sync #7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Train sync #7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

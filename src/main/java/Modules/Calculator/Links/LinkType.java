@@ -1,7 +1,5 @@
 package Modules.Calculator.Links;
 
-public class Link {
-
-
+public abstract class LinkType {
 
 }

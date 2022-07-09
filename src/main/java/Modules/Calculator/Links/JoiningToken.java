@@ -1,6 +1,6 @@
 package Modules.Calculator.Links;
 
-public class JoiningToken extends Link {
+public class JoiningToken extends LinkType {
 	
 	public static final JoiningToken
 		ADD = new JoiningToken(),

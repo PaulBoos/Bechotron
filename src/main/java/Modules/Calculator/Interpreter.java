@@ -68,7 +68,11 @@ public class Interpreter {
 					}
 					default -> buffer.append(newChar);
 				}
+				cursor++;
 			}
+		}
+		{
+		
 		}
 		
 		LinkItem rootItem = null;

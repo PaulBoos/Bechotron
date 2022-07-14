@@ -2,6 +2,7 @@ package Modules.Admin;
 
 import Head.BotInstance;
 import Modules.GlobalModule;
+import Modules.Module;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.PrivateChannel;
@@ -19,7 +20,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GlobalBanlist extends ListenerAdapter implements GlobalModule {
+public class GlobalBanlist extends ListenerAdapter implements Module {
 	
 	BotInstance bot;
 	long[] bans;
@@ -38,7 +39,7 @@ public class GlobalBanlist extends ListenerAdapter implements GlobalModule {
 		channel.sendMessage("Hello! You were just banned from " + bot.jda.getGuildById(guildid).getName() +
 				", because you are listed on my global banlist. " +
 				"To appeal this decision, send an email to bechotron@salt.faith").complete();
-		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, "This account is on the global banlist.").complete();
+		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, "This account is listed on the global banlist.").complete();
 	}
 	
 	@Override
@@ -76,7 +77,7 @@ public class GlobalBanlist extends ListenerAdapter implements GlobalModule {
 					List<String> lines = Files.readAllLines(path);
 					List<Long> banlist = new ArrayList<>();
 					for(String line: lines) {
-						line = line.replace("#", " # ");
+						line = line.replace("#", " #");
 						String[] split = line.split(" ");
 						for(String s: split) {
 							if(s.startsWith("#")) break;
@@ -99,7 +100,7 @@ public class GlobalBanlist extends ListenerAdapter implements GlobalModule {
 	
 	@Override
 	public String getDescription() {
-		return GlobalModule.super.getDescription() + "This module bans accounts deemed unsafe by my creator (which is rare.)";
+		return "This module bans accounts on my public global banlist.";
 	}
 	
 }

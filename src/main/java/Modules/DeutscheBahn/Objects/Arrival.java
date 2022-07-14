@@ -63,8 +63,7 @@ public class Arrival {
 				"journeyDetailReference=\"" + journeyDetailReference + "\", " +
 				"stopid=" + stopid + ", " +
 				"track=" + track + ", " +
-				"instant=" + instant +
-				"}";
+				"instant=" + instant + "}";
 	}
 	
 	@JacksonXmlRootElement(localName = "JourneyDetailRef")

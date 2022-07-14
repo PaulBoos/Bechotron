@@ -122,8 +122,7 @@ public class Command {
 		"Tell me something about the member",
 		event -> {
 			OptionMapping o = event.getOption("member");
-			Member target;
-			if(o==null) target = event.getMember(); else target = o.getAsMember();
+			Member target = o == null ? event.getMember() : o.getAsMember();
 			StringBuilder description = new StringBuilder();
 			{
 				assert target != null;

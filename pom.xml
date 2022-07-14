@@ -49,6 +49,7 @@
             <version>5prealpha-SNAPSHOT</version>
         </dependency>
 
+        <!-- Other Random Imports -->
         <dependency>
             <groupId>fr.bmartel</groupId>
             <artifactId>jspeedtest</artifactId>
@@ -121,20 +122,6 @@
                     <artifactId>opus-java</artifactId>
                 </exclusion>
             </exclusions>-->
-        </dependency>
-
-        <!-- STEAM API -->
-        <dependency>
-            <groupId>com.lukaspradel</groupId>
-            <artifactId>steam-web-api</artifactId>
-            <version>1.2</version>
-        </dependency>
-
-        <!-- CSS-Box (Website Renderer) -->
-        <dependency>
-            <groupId>net.sf.cssbox</groupId>
-            <artifactId>cssbox</artifactId>
-            <version>LATEST</version>
         </dependency>
 
         <!-- RENDERER ALTERNATIVE: HTMLUNIT --><!--

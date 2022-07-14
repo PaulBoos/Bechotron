@@ -5,6 +5,7 @@ import Modules.Admin.GlobalBanlist;
 import Modules.DeutscheBahn.DBModule;
 import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
+import Modules.Steam.SteamModule;
 import Modules.TestModule.Test;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
 import net.dv8tion.jda.api.JDA;
@@ -12,6 +13,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
@@ -28,6 +30,7 @@ public class BotInstance {
 	
 	public final List<GuildInstance> guildInstances = new ArrayList<>();
 	public JDA jda;
+	public static SteamModule steamModule;
 	
 	public static void main(String[] args) throws IOException, UnsupportedFlavorException {
 		if(ConfigReader.readTokenFile()) {
@@ -84,7 +87,7 @@ public class BotInstance {
 		jda.addEventListener(new PrivateChatHandler());
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
-		
+		steamModule = new SteamModule(this);
 	}
 	
 	public void setPresence() {

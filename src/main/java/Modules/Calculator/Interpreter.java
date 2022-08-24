@@ -70,6 +70,7 @@ public class Interpreter {
 				}
 				cursor++;
 			}
+			pushBuffer(buffer, tokenList);
 		}
 		{
 		

@@ -27,28 +27,9 @@
             <name>JitPack</name>
             <url>https://jitpack.io</url>
         </repository>
-
-        <!-- Repository Used for CMUSphinx -->
-        <repository>
-            <id>snapshots-repo</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
     </repositories>
 
     <dependencies>
-        <!-- SPEECH RECOGNITION SOFTWARE - CMUSphinx -->
-        <dependency>
-            <groupId>edu.cmu.sphinx</groupId>
-            <artifactId>sphinx4-core</artifactId>
-            <version>5prealpha-SNAPSHOT</version>
-        </dependency>
-
         <!-- Other Random Imports -->
         <dependency>
             <groupId>fr.bmartel</groupId>
@@ -80,18 +61,21 @@
             <artifactId>jiphy</artifactId>
             <version>LATEST</version>
         </dependency>
+
+        <!--
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.8-dmr</version>
         </dependency>
+        -->
 
         <!-- SEDMELLUQ'S LAVAPLAYER -->
         <dependency>
             <groupId>com.github.sedmelluq</groupId>
             <artifactId>lavaplayer</artifactId>
             <version>LATEST</version>
-        </dependency>
+        </dependency><!--
         <dependency>
             <groupId>com.sedmelluq</groupId>
             <artifactId>lavaplayer-natives-extra</artifactId>
@@ -101,7 +85,7 @@
             <groupId>com.github.walkyst</groupId>
             <artifactId>lavaplayer-natives-fork</artifactId>
             <version>LATEST</version>
-        </dependency>
+        </dependency>-->
 
         <!-- APACHE HTTP -->
         <dependency>
@@ -115,26 +99,7 @@
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>LATEST</version>
-            <!-- THIS EXCLUSION IS/WAS NECESSARY DUE TO SOME UNKNOWN CONFLICT
-            <exclusions>
-                <exclusion>
-                    <groupId>club.minnced</groupId>
-                    <artifactId>opus-java</artifactId>
-                </exclusion>
-            </exclusions>-->
         </dependency>
-
-        <!-- RENDERER ALTERNATIVE: HTMLUNIT --><!--
-        <dependency>
-            <groupId>net.sourceforge.htmlunit</groupId>
-            <artifactId>htmlunit</artifactId>
-            <version>2.60.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.htmlcleaner</groupId>
-            <artifactId>htmlcleaner</artifactId>
-            <version>LATEST</version>
-        </dependency>-->
 
         <!-- FASTERXML/JACKSON -->
         <dependency>

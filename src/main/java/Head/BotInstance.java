@@ -64,7 +64,7 @@ public class BotInstance {
 				token,
 				GatewayIntent.GUILD_MEMBERS,
 				GatewayIntent.GUILD_BANS,
-				GatewayIntent.GUILD_EMOJIS,
+				GatewayIntent.GUILD_EMOJIS_AND_STICKERS,
 				GatewayIntent.GUILD_VOICE_STATES,
 				GatewayIntent.GUILD_MESSAGES,
 				GatewayIntent.GUILD_MESSAGE_REACTIONS,

@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.PrivateChannel;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
@@ -88,8 +89,8 @@ public class SkullGame {
 		jda = event.getJDA();
 		host = event.getMember();
 		initMessage = event.getChannel().sendMessage(host.getEffectiveName() + " wants to play Skull! " + skullEmote + "\nReact with " + joinEmoteDefault + " to join. When " + PLAYER_NUMBER + " Players are ready, I will start the game!").complete();
-		initMessage.addReaction(joinEmoteDefault).complete();
-		initMessage.addReaction(deleteGameEmote).complete();
+		initMessage.addReaction(Emoji.fromUnicode(joinEmoteDefault)).complete();
+		initMessage.addReaction(Emoji.fromUnicode(deleteGameEmote)).complete();
 		eventListener = new SkullEventListener();
 		toJoinQueue = new ArrayDeque<>();
 		registerEventListener();
@@ -248,35 +249,35 @@ public class SkullGame {
 		boolean[] options = new boolean[4]; // PLUS SKIP BLOSSOM SKULL
 		if(message.contains(emote_hash)) {
 			for(int i = MINIMUM_TO_BID; i < Math.min(cardsPlayed(), MAXIMUM_TO_BID); i++) { // Start with the minimum.
-				sentMessage.addReaction(number_emotes[i - 1]).queue();                      // Add all bidding options from MINIMUM_TO_BID up to MAXIMUM_TO_BID
+				sentMessage.addReaction(Emoji.fromUnicode(number_emotes[i - 1])).queue();                      // Add all bidding options from MINIMUM_TO_BID up to MAXIMUM_TO_BID
 			}
 			if(message.contains(emote_plus)) {
-				sentMessage.addReaction(emote_plus).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(emote_plus)).queue();
 			}
 			if(message.contains(emote_skip)) {
-				sentMessage.addReaction(emote_skip).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(emote_skip)).queue();
 			}
 			if(message.contains(blossomEmote)) {
-				sentMessage.addReaction(blossomEmote).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(blossomEmote)).queue();
 			}
 			if(message.contains(skullEmote)) {
-				sentMessage.addReaction(skullEmote).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(skullEmote)).queue();
 			}
 		} else {
 			if(message.contains(emote_plus)) {
-				sentMessage.addReaction(emote_plus).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(emote_plus)).queue();
 				options[0] = true;
 			}
 			if(message.contains(emote_skip)) {
-				sentMessage.addReaction(emote_skip).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(emote_skip)).queue();
 				options[1] = true;
 			}
 			if(message.contains(blossomEmote)) {
-				sentMessage.addReaction(blossomEmote).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(blossomEmote)).queue();
 				options[2] = true;
 			}
 			if(message.contains(skullEmote)) {
-				sentMessage.addReaction(skullEmote).queue();
+				sentMessage.addReaction(Emoji.fromUnicode(skullEmote)).queue();
 				options[3] = true;
 			}
 			
@@ -442,7 +443,7 @@ public class SkullGame {
 			if(event.isFromGuild()) {
 				
 				// GUILD RECEIVER
-				switch(event.getReactionEmote().getEmoji()) {
+				switch(event.getEmoji().toString()) {
 					case joinEmoteDefault -> {
 						if(state == STATE.WAITING_FOR_PLAYERS)              // Is game in startup phase?
 							if(!toJoinQueue.contains(event.getMember())) {  // Add member, if not already added
@@ -467,7 +468,7 @@ public class SkullGame {
 					event.getReaction().removeReaction().queue();
 					event.getChannel().sendMessage("Please only react with your current options.").complete().delete().completeAfter(10, TimeUnit.SECONDS);
 				} else if(event.getReaction().getCount() == 2) {
-					switch(event.getReaction().getReactionEmote().getEmoji()) {
+					switch(event.getReaction().getEmoji().toString()) {
 						case blossomEmote -> cardPlayLoop(ActionEnum.BLOSSOM);
 						case skullEmote ->   cardPlayLoop(ActionEnum.SKULL);
 						case emote_skip ->   cardPlayLoop(ActionEnum.SKIP);

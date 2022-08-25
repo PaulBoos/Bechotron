@@ -41,8 +41,12 @@ public class DayTime {
 		}
 	}
 	
+	public int distanceToDaytime(DayTime other) {
+		return Math.abs(this.millis - other.millis);
+	}
+	
 	/**
-	 * Shift the time within the object.
+	 * Shift the time of the object.
 	 * @param unit the unit to increment.
 	 * @param shift the value to increment by.
 	 * @return the same object.

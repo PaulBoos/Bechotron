@@ -20,6 +20,8 @@ import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
+import net.dv8tion.jda.api.requests.restaction.MessageCreateAction;
+import net.dv8tion.jda.api.utils.messages.MessageCreateRequest;
 import net.dv8tion.jda.internal.interactions.component.ButtonImpl;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
@@ -129,7 +131,8 @@ public class DBModule extends ListenerAdapter implements Module {
 														foundId, stationName
 												)
 						);
-						List<ActionRow> rows = new ArrayList<>();
+						// TODO Test this feature, I don't know if I broke it somehow
+						MessageCreateAction request = event.getChannel().sendMessage(sb.toString());
 						List<ItemComponent> buttons = new ArrayList<>();
 						int buttonWidth = 5; //event.getMember().getOnlineStatus() == OnlineStatus.ONLINE ? 5 : 4; // TODO
 						for(Departure d: requestDepartures("en", foundId,
@@ -150,7 +153,7 @@ public class DBModule extends ListenerAdapter implements Module {
 									.append(d.getInstant().getEpochSecond()).append(":t>** in Direction **")
 									.append(d.getDirection()).append("** on Track ").append(d.getTrack()).append(".");
 							if(buttons.size() == buttonWidth) {
-								rows.add(ActionRow.of(buttons));
+								request.addActionRow(buttons);
 								buttons = new ArrayList<>();
 							}
 							String journey = d.getJourneyDetailReference();
@@ -167,12 +170,9 @@ public class DBModule extends ListenerAdapter implements Module {
 									)
 							);
 						}
-						rows.add(ActionRow.of(buttons));
+						request.addActionRow(buttons);
 						sb.append("\n\nTo view more detail, press the Buttons below:");
-						event.getChannel()
-								.sendMessage(sb.toString())
-								.setActionRows(rows)
-								.queue();
+						request.queue();
 					} catch(IOException e) {
 						event.getChannel().sendMessage("❌ Oh no! Seems like something broke. Maybe try again later?").queue();
 					} catch(NullPointerException e) {
@@ -237,7 +237,7 @@ public class DBModule extends ListenerAdapter implements Module {
 														foundId, stationName
 												)
 						);
-						List<ActionRow> rows = new ArrayList<>();
+						MessageCreateAction request = event.getChannel().sendMessage(sb.toString());
 						List<ItemComponent> buttons = new ArrayList<>();
 						int buttonWidth = 5; //event.getMember().getOnlineStatus() == OnlineStatus.ONLINE ? 5 : 4; // TODO
 						for(Arrival a: requestArrivals("en", foundId,
@@ -257,7 +257,7 @@ public class DBModule extends ListenerAdapter implements Module {
 										.append(a.getOrigin()).append("** on Track ").append(a.getTrack()).append(".");
 							}
 							if(buttons.size() == buttonWidth) {
-								rows.add(ActionRow.of(buttons));
+								request.addActionRow(buttons);
 								buttons = new ArrayList<>();
 							}
 							String journey = a.getJourneyDetailReference();
@@ -274,12 +274,9 @@ public class DBModule extends ListenerAdapter implements Module {
 									)
 							);
 						}
-						rows.add(ActionRow.of(buttons));
+						request.addActionRow(buttons);
 						sb.append("\n\nTo view more detail, press the Buttons below:");
-						event.getChannel()
-								.sendMessage(sb.toString())
-								.setActionRows(rows)
-								.queue();
+						request.queue();
 					} catch(IOException e) {
 						event.getChannel().sendMessage("❌ Oh no! Seems like something broke. Maybe try again later?").queue();
 					} catch(NullPointerException e) {

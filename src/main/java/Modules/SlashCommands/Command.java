@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.api.utils.AttachedFile;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import org.jetbrains.annotations.NotNull;
 
@@ -87,20 +88,20 @@ public class Command {
 				case "play" -> {
 					event.deferReply().queue();
 					AudioChannel vc = event.getMember().getVoiceState().getChannel();
-					TextChannel tc = event.getTextChannel();
+					TextChannel tc = event.getChannel().asTextChannel();
 					String url = event.getOption("song").getAsString();
 					MusicModule.manager.loadAndPlay(tc, vc, url);
 					event.getHook().editOriginal("▶ Playing...").queue();
 				}
 				case "skip" -> {
 					event.deferReply().queue();
-					TextChannel tc = event.getTextChannel();
+					TextChannel tc = event.getChannel().asTextChannel();
 					MusicModule.manager.skipTrack(tc);
 					event.getHook().editOriginal("⏭ Skipping track!").queue();
 				}
 				case "stop" -> {
 					event.deferReply().queue();
-					TextChannel tc = event.getTextChannel();
+					TextChannel tc = event.getChannel().asTextChannel();
 					MusicModule.manager.stopPlayback(tc);
 					event.getHook().editOriginal("⏹ Stopping Playback!").queue();
 				}
@@ -160,8 +161,8 @@ public class Command {
 		event -> {
 			event.deferReply().queue();
 			OptionMapping target = event.getOption("target");
-			if(target == null) event.getHook().sendFile(new File("images/vip.png")).queue();
-			else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFile(new File("images/vip.png")).queue();
+			if(target == null) event.getHook().editOriginalAttachments(AttachedFile.fromData(new File("images/vip.png"))).queue();
+			else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFiles(AttachedFile.fromData(new File("images/vip.png"))).queue();
 		},
 		new OptionData(
 			USER,

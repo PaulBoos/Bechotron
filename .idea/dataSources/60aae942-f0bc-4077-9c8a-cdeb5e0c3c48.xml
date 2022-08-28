@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="SQLite - database.db">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.39">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.40">
     <root id="1"/>
     <collation id="2" parent="1" name="BINARY"/>
     <collation id="3" parent="1" name="NOCASE"/>
@@ -1449,6 +1449,7 @@
     <key id="520" parent="492">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>ID</UnderlyingIndexColNames>
     </key>
     <key id="521" parent="492">
       <ColNames>memberID</ColNames>
@@ -1486,6 +1487,7 @@
     <key id="528" parent="493">
       <ColNames>sanctionID</ColNames>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>sanctionID</UnderlyingIndexColNames>
     </key>
     <column id="529" parent="494" name="ID">
       <DataType>INTEGER|0s</DataType>
@@ -1498,6 +1500,7 @@
     <key id="531" parent="494">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>ID</UnderlyingIndexColNames>
     </key>
     <column id="532" parent="495" name="type">
       <DataType>text|0s</DataType>

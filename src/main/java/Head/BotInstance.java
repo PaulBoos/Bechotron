@@ -2,6 +2,7 @@ package Head;
 
 import Files.ConfigReader;
 import Modules.Admin.GlobalBanlist;
+import Modules.DBIP.DBIPModule;
 import Modules.DeutscheBahn.DBModule;
 import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
@@ -70,7 +71,8 @@ public class BotInstance {
 				GatewayIntent.GUILD_MESSAGE_REACTIONS,
 				GatewayIntent.GUILD_PRESENCES,
 				GatewayIntent.DIRECT_MESSAGES,
-				GatewayIntent.DIRECT_MESSAGE_REACTIONS
+				GatewayIntent.DIRECT_MESSAGE_REACTIONS,
+				GatewayIntent.MESSAGE_CONTENT
 		).enableCache(
 				CacheFlag.ACTIVITY,
 				CacheFlag.CLIENT_STATUS
@@ -88,6 +90,8 @@ public class BotInstance {
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
+		DBIPModule dbipModule = new DBIPModule();
+		jda.addEventListener(dbipModule);
 	}
 	
 	public void setPresence() {

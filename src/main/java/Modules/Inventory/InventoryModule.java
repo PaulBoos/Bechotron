@@ -1,25 +1,27 @@
-package Modules.Suggester;
+package Modules.Inventory;
 
 import Modules.Module;
 import Modules.RequireModuleHook;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
 
-public class SuggesterModule extends ListenerAdapter implements Module {
+public class InventoryModule implements Module {
 	
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
-	
-	
 	@Override
 	public String getDescription() {
-		return "This Module allows people to make suggestions.";
+		return null;
 	}
 	
 	@Override
 	public String getName() {
-		return null;
+		return "Inventory Module";
+	}
+	
+	@Override
+	public void init() {
+	
 	}
 	
 	@Override
@@ -31,10 +33,4 @@ public class SuggesterModule extends ListenerAdapter implements Module {
 	public RequireModuleHook getMyRequireModuleHook() {
 		return HOOK;
 	}
-	
-	@Override
-	public void init() {
-	
-	}
-	
 }

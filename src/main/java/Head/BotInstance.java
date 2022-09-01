@@ -1,20 +1,19 @@
 package Head;
 
-import Files.ConfigReader;
+import Utils.ConfigReader;
 import Modules.Admin.GlobalBanlist;
-import Modules.DBIP.DBIPModule;
 import Modules.DeutscheBahn.DBModule;
 import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
 import Modules.Steam.SteamModule;
 import Modules.TestModule.Test;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
+import Utils.Security.Tokens;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
@@ -34,29 +33,23 @@ public class BotInstance {
 	public static SteamModule steamModule;
 	
 	public static void main(String[] args) throws IOException, UnsupportedFlavorException {
-		if(ConfigReader.readTokenFile()) {
-			Thread t = new Thread(() -> {
-				try {
-					new BotInstance(ConfigReader.firstLine);
-				} catch(Exception e) {
-					System.out.println("\nvvv LOGIN FAILED vvv");
-					e.printStackTrace();
-				}
-			});
-			t.start();
-		} else {
+		try {
+			new BotInstance(Tokens.readToken("bot"));
+		} catch(Tokens.TokenFileNotFoundException e) {
 			if(Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor).toString().contains(Integer.toString(0x0a))) {
 				System.out.println("LOGIN FAILED - CLIPBOARD TOKEN INVALID");
 			}
 			Thread t = new Thread(() -> {
 				try {
 					new BotInstance(Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor).toString());
-				} catch(Exception e) {
+				} catch(Exception ex) {
 					System.out.println("\nvvv LOGIN FAILED vvv");
-					e.printStackTrace();
+					ex.printStackTrace();
 				}
 			});
 			t.start();
+		} catch(LoginException | InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -90,8 +83,8 @@ public class BotInstance {
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
-		DBIPModule dbipModule = new DBIPModule();
-		jda.addEventListener(dbipModule);
+		//DBIPModule dbipModule = new DBIPModule();
+		//jda.addEventListener(dbipModule);
 	}
 	
 	public void setPresence() {

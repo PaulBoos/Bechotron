@@ -1,6 +1,7 @@
 package Modules.Fun;
 
 import Modules.Module;
+import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
@@ -14,13 +15,35 @@ import java.util.List;
 
 public class ShipperModule implements Module {
 	
-	public ShipperModule(@NotNull JDA jda) {
-		jda.addEventListener(new ShipMessageReceiver());
-	}
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	@Override
 	public String getDescription() {
 		return "Love is in the air!";
+	}
+	
+	@Override
+	public String getName() {
+		return "Shipper Module";
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
+	}
+	
+	@Override
+	public void init() {
+	
+	}
+	
+	public ShipperModule(@NotNull JDA jda) {
+		jda.addEventListener(new ShipMessageReceiver());
 	}
 	
 	private class ShipMessageReceiver extends ListenerAdapter {

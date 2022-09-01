@@ -1,8 +1,8 @@
 package Modules.Admin;
 
 import Head.BotInstance;
-import Modules.GlobalModule;
 import Modules.Module;
+import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.PrivateChannel;
@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GlobalBanlist extends ListenerAdapter implements Module {
+	
+	private RequireModuleHook HOOK = new RequireModuleHook();
 	
 	BotInstance bot;
 	long[] bans;
@@ -101,6 +103,26 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	@Override
 	public String getDescription() {
 		return "This module bans accounts on my public global banlist.";
+	}
+	
+	@Override
+	public String getName() {
+		return "GlobalBanlist";
+	}
+	
+	@Override
+	public void init() {
+	
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
 	}
 	
 }

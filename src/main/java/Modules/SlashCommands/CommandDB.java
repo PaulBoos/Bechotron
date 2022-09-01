@@ -1,6 +1,6 @@
 package Modules.SlashCommands;
 
-import Head.dbAccess;
+import Databases.dbAccess;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

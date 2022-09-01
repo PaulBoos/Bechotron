@@ -1,7 +1,7 @@
 package Modules.CharacterSheet;
 
 import Head.GuildInstance;
-import Head.dbAccess;
+import Databases.dbAccess;
 
 public class CharacterDB extends dbAccess {
 	

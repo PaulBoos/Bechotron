@@ -9,6 +9,7 @@ import Modules.DeutscheBahn.Responses.GetDeparturesResponse;
 import Modules.DeutscheBahn.Responses.GetStationsResponse;
 import Modules.DeutscheBahn.Responses.Journey;
 import Modules.Module;
+import Modules.RequireModuleHook;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -16,12 +17,10 @@ import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import net.dv8tion.jda.api.requests.restaction.MessageCreateAction;
-import net.dv8tion.jda.api.utils.messages.MessageCreateRequest;
 import net.dv8tion.jda.internal.interactions.component.ButtonImpl;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
@@ -37,6 +36,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DBModule extends ListenerAdapter implements Module {
+	
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
+	
 	
 	private final JDA jda;
 	private final HashMap<Integer, String> journeyBuffer = new HashMap<>();
@@ -426,6 +428,26 @@ public class DBModule extends ListenerAdapter implements Module {
 	
 	@Override
 	public String getDescription() {
-		return "This module allows to lookup train timetables for germany (Deutsche Bahn).";
+		return "This module allows to lookup train timetables for germany's long distance train travel. (Deutsche Bahn).";
+	}
+	
+	@Override
+	public String getName() {
+		return "DB-Fern Module";
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
+	}
+	
+	@Override
+	public void init() {
+	
 	}
 }

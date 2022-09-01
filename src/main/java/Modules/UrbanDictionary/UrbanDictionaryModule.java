@@ -1,6 +1,7 @@
 package Modules.UrbanDictionary;
 
-import Modules.Module;
+import Head.BotModule;
+import Modules.RequireModuleHook;
 import Modules.SlashCommands.Command;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +16,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class UrbanDictionaryModule extends ListenerAdapter implements Module {
+public class UrbanDictionaryModule extends ListenerAdapter implements BotModule {
+	
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
+	
+	private static final String
+		BASE_URL = "http://api.urbandictionary.com/v0/define?term=",
+		BASE_RAN = "http://api.urbandictionary.com/v0/random",
+		BASE_TAG = "http://api.urbandictionary.com/v0/random?tag=";
 	
 	private static final ObjectMapper mapper = new ObjectMapper();
 	public static final Command URBAN = new Command(
@@ -56,12 +64,37 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 	}
 	
 	public static List<UDEntry> requestUrbanEntries(String searchQuery) throws IOException {
-		return mapper.readValue(new URL("https://api.urbandictionary.com/v0/define?term=" + searchQuery), entryList.class).list;
+		return mapper.readValue(new URL(BASE_URL + searchQuery), entryList.class).list;
 	}
 	
 	@Override
 	public String getDescription() {
 		return "This module allows to look up terms in the Urban Dictionary!";
+	}
+	
+	@Override
+	public String getName() {
+		return "Urban Dictionary Module";
+	}
+	
+	@Override
+	public void init() {
+	
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
+	}
+	
+	@Override
+	public void init(JDA jda) {
+	
 	}
 	
 	public static class entryList {

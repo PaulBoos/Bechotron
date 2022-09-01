@@ -1,4 +1,4 @@
-package Head;
+package Databases;
 
 import java.sql.*;
 
@@ -19,6 +19,12 @@ public abstract class dbAccess {
 	protected void connect() throws SQLException {
 		if(conn == null) {
 			conn = DriverManager.getConnection(DATABASEPATH);
+		}
+	}
+	
+	protected void disconnect() throws SQLException {
+		if(conn != null) {
+			conn.close();
 		}
 	}
 	

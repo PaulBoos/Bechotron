@@ -2,6 +2,8 @@ package Modules.Steam;
 
 import Head.BotInstance;
 import Modules.Module;
+import Modules.RequireModuleHook;
+import Utils.Security.Tokens;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
@@ -11,13 +13,11 @@ import org.apache.http.util.EntityUtils;
 
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 public class SteamModule implements Module {
+	
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	public final BotInstance botInstance;
 	private String token;
@@ -49,59 +49,75 @@ public class SteamModule implements Module {
 			builder.setFooter("Steam64ID: " + user.steamid);
 			channel.sendMessageEmbeds(builder.build()).queue();
 		} catch(IOException e) {
+			e.printStackTrace();
 			channel.sendMessage("Sorry, couldn't fulfill your request.");
 		}
 		
 	}
 	
 	public SteamUser requestSteamUser(long steamid) throws IOException {
-		Request request = Request.Get(String.format(
-			"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s&format=xml",
-			getToken(), steamid
-		));
+		Request request = null;
+		try {
+			request = Request.Get(String.format(
+				"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s&format=xml",
+				getToken(), steamid
+			));
+		} catch(Tokens.TokenFileNotFoundException e) {
+			e.printStackTrace();
+		}
 		HttpResponse httpResponse = request.execute().returnResponse();
 		if (httpResponse.getEntity() != null) {
 			String xml = EntityUtils.toString(httpResponse.getEntity());
-			return new XmlMapper().readValue(
-				xml // TODO Fix this heresy
-					.replace("<response>", "")
-					.replace("</response>", "")
-					.replace("<players>","")
-					.replace("</players>","")
-				, SteamUser.class);
+			SteamUser[] result = new XmlMapper().readValue(xml, SteamXMLResponse.PlayerRequestResponse.class).players;
+			return result[0];
 		}
 		return null;
 	}
 	
 	public static void main(String[] args) throws IOException, UnsupportedFlavorException, InterruptedException {
-		BotInstance.main(null);
-		Thread.sleep(5000);
+		new Thread(() -> {
+			try {
+				BotInstance.main(null);
+			} catch(IOException | UnsupportedFlavorException e) {
+				throw new RuntimeException(e);
+			}
+		}).start();
+		Thread.sleep(10000);
 		BotInstance.steamModule.prettySteamProfileEmbed(758778066725371994L, 76561198320395703L);
 		// channel 758778066725371994L
 		// user     76561197960435530L
 	}
 	
-	public String getToken() {
+	public String getToken() throws Tokens.TokenFileNotFoundException {
 		if(token == null) {
-			try {
-				DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get("./tokens/"), path -> path.toFile().isFile());
-				for(Path path: stream) {
-					if(path.getFileName().toString().equals("steam")) {
-						List<String> lines = Files.readAllLines(path);
-						token = lines.get(0);
-						return token;
-					}
-				}
-			} catch(IOException e) {
-				e.printStackTrace();
-			}
+			token = Tokens.readToken("steam");
+			return token;
 		} else return token;
-		return null;
 	}
 	
 	
 	@Override
 	public String getDescription() {
 		return "This Module allows to get some information off steam.";
+	}
+	
+	@Override
+	public String getName() {
+		return "Steam Module";
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
+	}
+	
+	@Override
+	public void init() {
+	
 	}
 }

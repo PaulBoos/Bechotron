@@ -1,6 +1,7 @@
 package Modules.DBIP;
 
 import Modules.Module;
+import Modules.RequireModuleHook;
 import in.ankushs.dbip.api.DbIpClient;
 import in.ankushs.dbip.api.GeoEntity;
 import in.ankushs.dbip.exceptions.InvalidIPException;
@@ -11,10 +12,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.net.InetAddress;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DBIPModule extends ListenerAdapter implements Module {
+	
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	final Pattern // IGNORE THIS. DO NOT LOOK INTO THE REGEX' EYES. YOU MIGHT TURN INTO STONE.
 			ipv4pattern = Pattern.compile("(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}"),
@@ -37,7 +41,7 @@ public class DBIPModule extends ListenerAdapter implements Module {
 					String hit = ipv4matcher.group();
 					event.getChannel().sendMessageEmbeds(buildMessage(lookup(hit), event).build()).queue();
 				} else if(ipv6matcher.find()) { // IPv6
-					String hit = ipv4matcher.group();
+					String hit = ipv6matcher.group();
 					event.getChannel().sendMessageEmbeds(buildMessage(lookup(hit), event).build()).queue();
 				} else {                        // None found.
 					event.getChannel().sendMessage("Sorry " + event.getAuthor().getAsMention() + ", I could not complete your query. Please make sure you typed the IPv4 or IPv6 Address correctly.").queue();
@@ -89,6 +93,26 @@ public class DBIPModule extends ListenerAdapter implements Module {
 	@Override
 	public String getDescription() {
 		return "Module for looking up IP addresses geographic information.\nIP Geolocation by DB-IP (https://db-ip.com/)";
+	}
+	
+	@Override
+	public String getName() {
+		return null;
+	}
+	
+	@Override
+	public void init() {
+	
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
 	}
 	
 	public class DBIPPacket {

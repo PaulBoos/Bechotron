@@ -1,8 +1,8 @@
 package Modules.SlashCommands;
 
 import Head.GuildInstance;
-import Modules.GlobalModule;
 import Modules.Module;
+import Modules.RequireModuleHook;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class SlashModule extends ListenerAdapter implements GlobalModule {
+public class SlashModule extends ListenerAdapter implements Module {
+	
+	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	public final GuildInstance instance;
 	public final CommandDB db;
@@ -100,4 +102,28 @@ public class SlashModule extends ListenerAdapter implements GlobalModule {
 		}
 	}
 	
+	@Override
+	public String getDescription() {
+		return null;
+	}
+	
+	@Override
+	public String getName() {
+		return "Slash Command Module";
+	}
+	
+	@Override
+	public List<RequireModuleHook> requireModules() {
+		return null;
+	}
+	
+	@Override
+	public RequireModuleHook getMyRequireModuleHook() {
+		return HOOK;
+	}
+	
+	@Override
+	public void init() {
+	
+	}
 }

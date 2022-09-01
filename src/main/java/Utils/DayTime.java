@@ -1,5 +1,7 @@
 package Utils;
 
+import Utils.Time.TimeUnit;
+
 public class DayTime {
 	
 	private int millis;
@@ -41,7 +43,7 @@ public class DayTime {
 		}
 	}
 	
-	public int distanceToDaytime(DayTime other) {
+	public int timeUntil(DayTime other) {
 		return Math.abs(this.millis - other.millis);
 	}
 	
@@ -51,12 +53,12 @@ public class DayTime {
 	 * @param shift the value to increment by.
 	 * @return the same object.
 	 */
-	public DayTime shiftTime(Unit unit, int shift) {
+	public DayTime shiftTime(TimeUnit unit, int shift) {
 		switch(unit) {
-			case HOURS -> millis += shift * 3600_000;
-			case MINUTES -> millis += shift * 60_000;
-			case SECONDS -> millis += shift * 1000;
-			case MILLIS -> millis += shift;
+			case HOUR -> millis += shift * 3600_000;
+			case MINUTE -> millis += shift * 60_000;
+			case SECOND -> millis += shift * 1000;
+			case MILLISECOND -> millis += shift;
 		}
 		millis %= 86_400_000;
 		return this;
@@ -74,10 +76,6 @@ public class DayTime {
 	@Override
 	public String toString() {
 		return String.format("DayTime(%02d:%02d:%02d.%03d)", (millis -(millis % 3600_000)) / 3600_000, ((millis % 3600_000) -(millis % 60_000)) / 60_000, ((millis % 60_000) -(millis % 1000)) / 1000, millis % 1000);
-	}
-	
-	public enum Unit {
-		HOURS, MINUTES, SECONDS, MILLIS
 	}
 	
 }

@@ -1,6 +1,6 @@
 package Modules.Games.Werwolf;
 
-import net.dv8tion.jda.api.entities.PrivateChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel;
 import org.apache.commons.collections4.set.ListOrderedSet;
 
 import java.util.Set;

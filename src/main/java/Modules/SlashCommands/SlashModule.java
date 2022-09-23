@@ -73,7 +73,7 @@ public class SlashModule extends ListenerAdapter implements Module {
 			addCommands(Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
 		if(instance.guild == 739513862449266729L) { //BTS
-			addCommands(Command.MEMBERINFO, Command.DELETE);
+			addCommands(Command.MEMBERINFO, Command.DELETE, Command.GLOBALBANREQUEST);
 		}
 		if(instance.guild == 652967667946225667L) { //J4F
 			addCommands(Command.PING, Command.MUSIC, Command.DELETE, Command.TIMEOUT, Command.MEMBERINFO, Command.AVATAR, Command.VIP);

@@ -1,4 +1,4 @@
-token
+*.token
 Bechotron 3.iml
 /src/main/java/Modules/Speech/src/*
 /.idea/*

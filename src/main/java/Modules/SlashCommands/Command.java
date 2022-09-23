@@ -3,14 +3,19 @@ package Modules.SlashCommands;
 import Modules.Music.MusicModule;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import net.dv8tion.jda.api.utils.AttachedFile;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.internal.interactions.component.ButtonImpl;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -87,6 +92,7 @@ public class Command {
 			switch(event.getSubcommandName()) {
 				case "play" -> {
 					event.deferReply().queue();
+					
 					AudioChannel vc = event.getMember().getVoiceState().getChannel();
 					TextChannel tc = event.getChannel().asTextChannel();
 					String url = event.getOption("song").getAsString();
@@ -189,6 +195,43 @@ public class Command {
 			"time",
 			"how long (in seconds)"
 		)
+	),
+	GLOBALBANREQUEST = new Command(
+			"banrequest",
+			"Request a global ban",
+			event -> {
+				event.deferReply().queue();
+				TextChannel requestChannel = event.getJDA().getTextChannelById(1016790193161916467L);
+				try {
+					requestChannel.sendMessageEmbeds(
+							new EmbedBuilder()
+									.setTitle("Global Ban Request by " + event.getMember().getAsMention())
+									.setThumbnail(event.getMember().getAvatarUrl())
+									.setDescription(
+											"Target:\n" + event.getOption("target").getAsMember()
+											+ "\nReason:\n" + event.getOption("reason").getAsString())
+									.build()
+					).addActionRow(
+							new ButtonImpl("ban ", "Accept", ButtonStyle.SUCCESS, false, Emoji.fromUnicode("✔")),
+							new ButtonImpl("ban ", "Decline", ButtonStyle.DANGER, false, Emoji.fromUnicode("❌"))
+					).queue();
+					event.getHook().editOriginal("Processing Request.").queue();
+				} catch(Exception e) {
+					event.getHook().editOriginal("Could not process request.").queue();
+					e.printStackTrace();
+				}
+				
+			},
+			new OptionData(
+					USER,
+					"target",
+					"who to ban"
+			).setRequired(true),
+			new OptionData(
+					STRING,
+					"reason",
+					"reason for banning"
+			).setRequired(true)
 	);
 	
 	private final SlashExecutor slashExecutor;

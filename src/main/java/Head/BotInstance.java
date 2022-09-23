@@ -1,6 +1,5 @@
 package Head;
 
-import Utils.ConfigReader;
 import Modules.Admin.GlobalBanlist;
 import Modules.DeutscheBahn.DBModule;
 import Modules.Fun.ShipperModule;
@@ -36,6 +35,7 @@ public class BotInstance {
 		try {
 			new BotInstance(Tokens.readToken("bot"));
 		} catch(Tokens.TokenFileNotFoundException e) {
+			e.printStackTrace();
 			if(Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor).toString().contains(Integer.toString(0x0a))) {
 				System.out.println("LOGIN FAILED - CLIPBOARD TOKEN INVALID");
 			}
@@ -43,7 +43,7 @@ public class BotInstance {
 				try {
 					new BotInstance(Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor).toString());
 				} catch(Exception ex) {
-					System.out.println("\nvvv LOGIN FAILED vvv");
+					System.out.println("\nvvv CLIPBOARD LOGIN FAILED vvv");
 					ex.printStackTrace();
 				}
 			});
@@ -76,7 +76,7 @@ public class BotInstance {
 		setPresence();
 		new GlobalBanlist(this);
 		new Test(this);
-		createGuilds(false);
+		createGuilds(true);
 		new DBModule(jda);
 		new MusicModule(jda);
 		jda.addEventListener(new PrivateChatHandler());

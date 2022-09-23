@@ -4,8 +4,7 @@ import Head.BotInstance;
 import Modules.Module;
 import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.PrivateChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -19,6 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class GlobalBanlist extends ListenerAdapter implements Module {
 	
@@ -37,19 +37,21 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	}
 	
 	private void ban(long userid, long guildid) {
-		PrivateChannel channel = bot.jda.getUserById(userid).openPrivateChannel().complete();
-		channel.sendMessage("Hello! You were just banned from " + bot.jda.getGuildById(guildid).getName() +
+		PrivateChannel privateChannel = bot.jda.getUserById(userid).openPrivateChannel().complete();
+		privateChannel.sendMessage("Hello! You were just banned from " + bot.jda.getGuildById(guildid).getName() +
 				", because you are listed on my global banlist. " +
-				"To appeal this decision, send an email to bechotron@salt.faith").complete();
-		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, "This account is listed on the global banlist.").complete();
+				"To appeal this decision, send an email to ban-appeal@salt.faith").complete();
+		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, TimeUnit.SECONDS)
+				.reason("This account is listed on the global banlist.")
+				.complete();
 	}
 	
 	@Override
-	public void onGuildReady(@NotNull GuildReadyEvent event) {
+	public void onGuildReady(@NotNull GuildReadyEvent event) {/*
 		for(Member m: event.getGuild().getMembers())
 			for(long b: bans)
 				if(m.getIdLong() == b)
-					ban(b, event.getGuild().getIdLong());
+					ban(b, event.getGuild().getIdLong());*/ // TODO onGuildReady
 	}
 	
 	@Override

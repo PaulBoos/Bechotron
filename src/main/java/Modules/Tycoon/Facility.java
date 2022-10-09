@@ -1,5 +1,8 @@
 package Modules.Tycoon;
 
+import java.sql.SQLException;
+import java.util.List;
+
 public class Facility {
 	
 	private final int id;
@@ -15,6 +18,17 @@ public class Facility {
 		this.owner = owner;
 		this.locX = locX;
 		this.locY = locY;
+	}
+	
+	@Override
+	public String toString() {
+		return "Facility" +
+				" #" + id +
+				" [" + type +
+				"] '" + name + '\'' +
+				" owned by " + owner +
+				" located at " + locX +
+				"/" + locY;
 	}
 	
 	public enum FacilityType {

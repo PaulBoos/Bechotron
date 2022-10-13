@@ -11,6 +11,7 @@ public class TycoonDatabase {
 	private final String DATABASEPATH = "jdbc:sqlite:./data/tycoon.db";
 	private final HashMap<String, Account> accountRegistry = new HashMap<>();
 	private final HashMap<Integer, Facility> facilityRegistry = new HashMap<>();
+	private final HashMap<Long, Landlord> landlordRegistry = new HashMap<>();
 	
 	public TycoonDatabase() throws SQLException {
 		connect();
@@ -99,7 +100,6 @@ public class TycoonDatabase {
 								rs.getInt("facilityid"),
 								rs.getString("name"),
 								Facility.FacilityType.valueOf(rs.getString("type").toUpperCase()),
-								owner,
 								rs.getFloat("locX"),
 								rs.getFloat("locY"));
 						facilityRegistry.put(rs.getInt("facilityid"), f);
@@ -134,7 +134,6 @@ public class TycoonDatabase {
 								facilityid,
 								rs.getString("name"),
 								Facility.FacilityType.valueOf(rs.getString("type").toUpperCase()),
-								rs.getLong("owner"),
 								rs.getInt("locX"),
 								rs.getInt("locY"));
 						facilityRegistry.put(facilityid, f);

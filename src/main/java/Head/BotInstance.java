@@ -13,6 +13,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
@@ -83,8 +84,23 @@ public class BotInstance {
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
+		jda.getTextChannelById(1029414199048294503L).sendMessage("HEY <@631458458096500756>").queue();
 		//DBIPModule dbipModule = new DBIPModule();
 		//jda.addEventListener(dbipModule);
+		/*TaskScheduler ts = new TaskScheduler();
+		TaskScheduler.botInstance = this;
+		ts.addTask(new TaskScheduler.Task(1665533518L, () -> {
+			BotInstance bot = TaskScheduler.botInstance;
+			TextChannel channel = bot.jda.getTextChannelById(1029414199048294503L);
+			for(int i = 0; i < 3600; i++) {
+				channel.sendMessage("HEY <@631458458096500756> (" + i + ")").queue();
+				try {
+					Thread.sleep(1000);
+				} catch(InterruptedException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}));*/
 	}
 	
 	public void setPresence() {

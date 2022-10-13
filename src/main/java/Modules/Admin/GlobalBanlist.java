@@ -62,7 +62,7 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	}
 	
 	@Override
-	public void onMessageReceived(@NotNull MessageReceivedEvent event) {
+	public void onMessageReceived(@NotNull MessageReceivedEvent event) {/* TODO Repair "Cannot read the array length because "<local2>" is null"
 		for(long l: bans) if(l == event.getAuthor().getIdLong()) {
 			bot.jda.getTextChannelById(973916305285595147L).sendMessage(
 					String.format("User %s (%d) tries to appeal his global ban:\n%s",
@@ -70,7 +70,7 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 							event.getAuthor().getIdLong(),
 							event.getMessage().getContentStripped())
 			).queue();
-		}
+		}*/
 	}
 	
 	public void rereadBanlist() {

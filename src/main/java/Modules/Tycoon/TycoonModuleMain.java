@@ -8,9 +8,10 @@ public class TycoonModuleMain {
 	
 	public static void main(String[] args) throws SQLException, Numbers.IntegerOverflowException {
 		TycoonDatabase db = new TycoonDatabase();
-		Account a = db.getAccount(5, Currency.CREDIT);
-		Account.ChangeRequest req = a.makeRequest(-34);
-		req.forceFulfillment();
+		Facility f = db.getFacility(1);
+		f.setLandlord(new Landlord(1L));
+		f.getLandlord().registerFacility(f);
+		System.out.println(f);
 	}
 	
 }

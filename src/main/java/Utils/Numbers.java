@@ -8,8 +8,8 @@ public class Numbers {
 	 * @return true if adding a + b would overflow Integer.
 	 */
 	public static boolean sumIsOverflowSafe(int a, int b) {
-		return b > 0 ? (Integer.MAX_VALUE - a >= b) // If b is positive, b must be smaller than the distance between MAX and a
-				: (Integer.MIN_VALUE - a <= b); // If b is negative, b must be smaller (bigger) than the distance between MIN and a
+		return b > 0 ? (a < 0 || ((Integer.MAX_VALUE - a) >= b)) // If b is positive, b must be smaller than the distance between MAX and a
+				: (a > 0 || ((a - Integer.MIN_VALUE) <= b)); // If b is negative, b must be smaller (bigger) than the distance between MIN and a
 	}
 	
 	/**

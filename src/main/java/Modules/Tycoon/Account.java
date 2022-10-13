@@ -70,7 +70,7 @@ public class Account {
 		 */
 		public boolean isFulfillable() throws Numbers.IntegerOverflowException {
 			if(!Numbers.sumIsOverflowSafe(account.getBalance(), amount)) throw new Numbers.IntegerOverflowException();
-			return ((amount > 0) || (account.getBalance() + amount > 0)); // Check if value is added OR if the withdrawal is affordable.
+			return ((amount > 0) || (account.getBalance() + amount >= 0)); // Check if value is added OR if the withdrawal is affordable.
 		}
 		
 		/**

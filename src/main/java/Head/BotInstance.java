@@ -6,6 +6,7 @@ import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
 import Modules.Steam.SteamModule;
 import Modules.TestModule.Test;
+import Modules.Timestamp.TimestampModule;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
 import Utils.Security.Tokens;
 import net.dv8tion.jda.api.JDA;
@@ -84,7 +85,8 @@ public class BotInstance {
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
-		jda.getTextChannelById(1029414199048294503L).sendMessage("HEY <@631458458096500756>").queue();
+		TimestampModule timestampModule = new TimestampModule();
+		jda.addEventListener(timestampModule);
 		//DBIPModule dbipModule = new DBIPModule();
 		//jda.addEventListener(dbipModule);
 		/*TaskScheduler ts = new TaskScheduler();

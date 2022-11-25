@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +45,15 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, TimeUnit.SECONDS)
 				.reason("This account is listed on the global banlist.")
 				.complete();
+	}
+	
+	@Override
+	public void onButtonInteraction(@NotNull ButtonInteractionEvent event) {
+		if(event.getButton().getId().startsWith("ban ") && event.getMember().getIdLong() == 282551955975307264L) {
+			long userid = Long.parseLong(event.getButton().getId().substring(4));
+			ban(userid, event.getGuild().getIdLong());
+			event.reply("Banned " + event.getGuild().getMemberById(userid).getEffectiveName()).queue();
+		}
 	}
 	
 	@Override
@@ -110,11 +120,6 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	@Override
 	public String getName() {
 		return "GlobalBanlist";
-	}
-	
-	@Override
-	public void init() {
-	
 	}
 	
 	@Override

@@ -29,10 +29,6 @@ public class CharacterSheetModule extends ListenerAdapter implements Module {
 		return "Character Sheet Module";
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

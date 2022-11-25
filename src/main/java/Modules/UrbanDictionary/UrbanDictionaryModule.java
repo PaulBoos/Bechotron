@@ -77,10 +77,6 @@ public class UrbanDictionaryModule extends ListenerAdapter implements BotModule 
 		return "Urban Dictionary Module";
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

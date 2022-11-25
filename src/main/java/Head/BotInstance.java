@@ -8,6 +8,7 @@ import Modules.Steam.SteamModule;
 import Modules.TestModule.Test;
 import Modules.Timestamp.TimestampModule;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
+import Modules.VoteModule.VotingModule;
 import Utils.Security.Tokens;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -55,7 +56,7 @@ public class BotInstance {
 		}
 	}
 	
-	BotInstance(String token) throws LoginException, InterruptedException {
+	BotInstance(String token) throws LoginException, InterruptedException, IOException {
 		jda = JDABuilder.create(
 				token,
 				GatewayIntent.GUILD_MEMBERS,
@@ -78,31 +79,20 @@ public class BotInstance {
 		setPresence();
 		new GlobalBanlist(this);
 		new Test(this);
-		createGuilds(true);
+		createGuilds(false);
 		new DBModule(jda);
 		new MusicModule(jda);
 		jda.addEventListener(new PrivateChatHandler());
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
-		TimestampModule timestampModule = new TimestampModule();
-		jda.addEventListener(timestampModule);
+		jda.addEventListener(new TimestampModule());
+		VotingModule vm = new VotingModule(this, 739513862449266729L, 282551955975307264L, 529637080431853589L);
+		
 		//DBIPModule dbipModule = new DBIPModule();
 		//jda.addEventListener(dbipModule);
-		/*TaskScheduler ts = new TaskScheduler();
-		TaskScheduler.botInstance = this;
-		ts.addTask(new TaskScheduler.Task(1665533518L, () -> {
-			BotInstance bot = TaskScheduler.botInstance;
-			TextChannel channel = bot.jda.getTextChannelById(1029414199048294503L);
-			for(int i = 0; i < 3600; i++) {
-				channel.sendMessage("HEY <@631458458096500756> (" + i + ")").queue();
-				try {
-					Thread.sleep(1000);
-				} catch(InterruptedException e) {
-					throw new RuntimeException(e);
-				}
-			}
-		}));*/
+		
+		
 	}
 	
 	public void setPresence() {

@@ -20,10 +20,6 @@ public class BanlistModule extends ListenerAdapter implements Module {
 		return "Banlist Module";
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

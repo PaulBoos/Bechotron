@@ -37,10 +37,6 @@ public class ShipperModule implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	public ShipperModule(@NotNull JDA jda) {
 		jda.addEventListener(new ShipMessageReceiver());

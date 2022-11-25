@@ -25,10 +25,6 @@ public class TycoonModule extends ListenerAdapter implements BotModule {
 	
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

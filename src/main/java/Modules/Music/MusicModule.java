@@ -38,8 +38,4 @@ public class MusicModule extends ListenerAdapter implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 }

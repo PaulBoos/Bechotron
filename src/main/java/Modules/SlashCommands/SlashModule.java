@@ -39,10 +39,6 @@ public class SlashModule extends ListenerAdapter implements Module {
 		if(event.getGuild().getIdLong() != instance.guild) return;
 		System.out.println("Slash Command Received! " + event.getName());
 		
-		//Get Hook
-		//CommandHook hook = event.getHook();
-		//hook.setEphemeral(true);
-		
 		for(Command c: commands) {
 			if(c.getCommand() != null && c.getCommand().equals(event.getName())) {
 				c.execute(event);
@@ -55,10 +51,6 @@ public class SlashModule extends ListenerAdapter implements Module {
 		//Only This Guild's slash commands
 		if(event.getGuild().getIdLong() != instance.guild) return;
 		
-		//Get Hook
-		//CommandHook hook = event.getHook();
-		//hook.setEphemeral(true);
-		
 		for(Command c: commands) {
 			if(c.getTextCommand() != null && event.getMessage().getContentStripped().startsWith(c.getTextCommand())) {
 				c.execute(event);
@@ -69,6 +61,9 @@ public class SlashModule extends ListenerAdapter implements Module {
 	
 	public void updateSlashCommands(boolean updateDiscord) {
 		addCommands(UrbanDictionaryModule.URBAN);
+		if(instance.guild == 1001947716554850417L) { // FINN
+			addCommands(Command.GLOBALBANREQUEST);
+		}
 		if(instance.guild == 607323699065913345L) { //KdS
 			addCommands(Command.MEMBERINFO, Command.AVATAR, Command.VIP);
 		}
@@ -122,8 +117,4 @@ public class SlashModule extends ListenerAdapter implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 }

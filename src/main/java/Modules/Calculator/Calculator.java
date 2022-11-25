@@ -19,10 +19,6 @@ public class Calculator implements Module {
 		return "Calculator Module";
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

@@ -45,8 +45,4 @@ public class Test extends ListenerAdapter implements Module {
 		return TESTMODULE;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 }

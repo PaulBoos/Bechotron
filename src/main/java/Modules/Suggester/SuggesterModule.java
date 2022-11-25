@@ -32,9 +32,5 @@ public class SuggesterModule extends ListenerAdapter implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 }

@@ -176,7 +176,7 @@ public class TycoonDatabase {
 	// TODO other checkTables
 	
 	private void connect() throws SQLException {
-		if(connection == null) {
+		if(connection == null || connection.isClosed()) {
 			connection = DriverManager.getConnection(DATABASEPATH);
 		}
 	}

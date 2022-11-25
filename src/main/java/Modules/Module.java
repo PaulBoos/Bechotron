@@ -8,8 +8,6 @@ public interface Module {
 	
 	String getName();
 	
-	void init();
-	
 	List<RequireModuleHook> requireModules();
 	RequireModuleHook getMyRequireModuleHook();
 	

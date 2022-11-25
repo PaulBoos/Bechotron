@@ -100,10 +100,6 @@ public class DBIPModule extends ListenerAdapter implements Module {
 		return null;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

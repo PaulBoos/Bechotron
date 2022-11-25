@@ -116,8 +116,4 @@ public class SteamModule implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 }

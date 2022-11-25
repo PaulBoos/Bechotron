@@ -19,10 +19,6 @@ public class InventoryModule implements Module {
 		return "Inventory Module";
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

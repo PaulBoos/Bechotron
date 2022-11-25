@@ -446,8 +446,4 @@ public class DBModule extends ListenerAdapter implements Module {
 		return HOOK;
 	}
 	
-	@Override
-	public void init() {
-	
-	}
 }

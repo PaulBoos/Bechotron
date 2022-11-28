@@ -47,12 +47,10 @@ public class BanVoteModule extends ListenerAdapter implements Module {
 	}
 	
 	
+	@Override
+	public void init(Guild guild) {
 	
-	
-	
-	
-	
-	
+	}
 	
 	@Override
 	public String getDescription() {

@@ -3,6 +3,7 @@ package Modules.CharacterSheet;
 import Head.GuildInstance;
 import Modules.Module;
 import Modules.RequireModuleHook;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
@@ -17,6 +18,11 @@ public class CharacterSheetModule extends ListenerAdapter implements Module {
 	public CharacterSheetModule(GuildInstance guildInstance) {
 		database = new CharacterDB(guildInstance);
 		
+	}
+	
+	@Override
+	public void init(Guild guild) {
+	
 	}
 	
 	@Override

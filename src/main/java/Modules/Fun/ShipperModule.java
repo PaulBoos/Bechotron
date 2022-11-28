@@ -4,6 +4,7 @@ import Modules.Module;
 import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -16,6 +17,11 @@ import java.util.List;
 public class ShipperModule implements Module {
 	
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

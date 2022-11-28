@@ -1,12 +1,13 @@
 package Modules.UrbanDictionary;
 
-import Head.BotModule;
+import Modules.Module;
 import Modules.RequireModuleHook;
 import Modules.SlashCommands.Command;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -16,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class UrbanDictionaryModule extends ListenerAdapter implements BotModule {
+public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 	
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
@@ -68,6 +69,11 @@ public class UrbanDictionaryModule extends ListenerAdapter implements BotModule 
 	}
 	
 	@Override
+	public void init(Guild guild) {
+	
+	}
+	
+	@Override
 	public String getDescription() {
 		return "This module allows to look up terms in the Urban Dictionary!";
 	}
@@ -86,11 +92,6 @@ public class UrbanDictionaryModule extends ListenerAdapter implements BotModule 
 	@Override
 	public RequireModuleHook getMyRequireModuleHook() {
 		return HOOK;
-	}
-	
-	@Override
-	public void init(JDA jda) {
-	
 	}
 	
 	public static class entryList {

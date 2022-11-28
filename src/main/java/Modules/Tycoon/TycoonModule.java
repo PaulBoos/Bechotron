@@ -1,14 +1,19 @@
 package Modules.Tycoon;
 
-import Head.BotModule;
+import Modules.Module;
 import Modules.RequireModuleHook;
-import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
 
-public class TycoonModule extends ListenerAdapter implements BotModule {
+public class TycoonModule extends ListenerAdapter implements Module {
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {
@@ -19,12 +24,6 @@ public class TycoonModule extends ListenerAdapter implements BotModule {
 	public String getName() {
 		return "Tycoon Module";
 	}
-	
-	@Override
-	public void init(JDA jda) {
-	
-	}
-	
 	
 	@Override
 	public List<RequireModuleHook> requireModules() {

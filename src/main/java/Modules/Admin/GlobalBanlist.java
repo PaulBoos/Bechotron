@@ -113,6 +113,11 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	}
 	
 	@Override
+	public void init(Guild guild) {
+	
+	}
+	
+	@Override
 	public String getDescription() {
 		return "This module bans accounts on my public global banlist.";
 	}

@@ -6,6 +6,7 @@ import Modules.RequireModuleHook;
 import Utils.Security.Tokens;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
@@ -95,6 +96,11 @@ public class SteamModule implements Module {
 		} else return token;
 	}
 	
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

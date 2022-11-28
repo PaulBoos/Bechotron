@@ -86,7 +86,8 @@ public class BotInstance {
 		new ShipperModule(jda);
 		new UrbanDictionaryModule(jda);
 		steamModule = new SteamModule(this);
-		jda.addEventListener(new TimestampModule());
+		TimestampModule.createModule(739513862449266729L);
+		TimestampModule.createModule(1037783202430976131L);
 		VotingModule vm = new VotingModule(this, 739513862449266729L, 282551955975307264L, 529637080431853589L);
 		
 		//DBIPModule dbipModule = new DBIPModule();

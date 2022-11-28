@@ -3,6 +3,7 @@ package Modules.Music;
 import Modules.Module;
 import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
@@ -16,6 +17,11 @@ public class MusicModule extends ListenerAdapter implements Module {
 	public MusicModule(JDA jda) {
 		jda.addEventListener(this);
 		manager = new MusicManager();
+	}
+	
+	@Override
+	public void init(Guild guild) {
+	
 	}
 	
 	@Override

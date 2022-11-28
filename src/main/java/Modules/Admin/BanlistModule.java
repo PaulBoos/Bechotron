@@ -2,6 +2,7 @@ package Modules.Admin;
 
 import Modules.Module;
 import Modules.RequireModuleHook;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
@@ -9,6 +10,11 @@ import java.util.List;
 public class BanlistModule extends ListenerAdapter implements Module {
 	
 	private RequireModuleHook HOOK = new RequireModuleHook();
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

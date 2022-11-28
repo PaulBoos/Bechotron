@@ -13,6 +13,7 @@ import Modules.RequireModuleHook;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -424,6 +425,11 @@ public class DBModule extends ListenerAdapter implements Module {
 		return input == null ? null : input
 				.replace("&#x0028;", "(")
 				.replace("&#x0029;", ")");
+	}
+	
+	@Override
+	public void init(Guild guild) {
+	
 	}
 	
 	@Override

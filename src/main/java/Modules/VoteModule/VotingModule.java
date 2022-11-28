@@ -1,7 +1,7 @@
 package Modules.VoteModule;
 
 import Head.BotInstance;
-import Head.GuildModule;
+import Modules.Module;
 import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class VotingModule extends ListenerAdapter implements GuildModule {
+public class VotingModule extends ListenerAdapter implements Module {
 	
 	BotInstance botInstance;
 	HashMap<Integer, Ballot> openBallots = new HashMap<>();

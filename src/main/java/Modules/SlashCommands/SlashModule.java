@@ -4,6 +4,7 @@ import Head.GuildInstance;
 import Modules.Module;
 import Modules.RequireModuleHook;
 import Modules.UrbanDictionary.UrbanDictionaryModule;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
@@ -95,6 +96,11 @@ public class SlashModule extends ListenerAdapter implements Module {
 			commands.add(c);
 			commandData.add(c.init());
 		}
+	}
+	
+	@Override
+	public void init(Guild guild) {
+	
 	}
 	
 	@Override

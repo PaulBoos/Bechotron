@@ -2,6 +2,7 @@ package Modules.Suggester;
 
 import Modules.Module;
 import Modules.RequireModuleHook;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.List;
@@ -11,6 +12,10 @@ public class SuggesterModule extends ListenerAdapter implements Module {
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

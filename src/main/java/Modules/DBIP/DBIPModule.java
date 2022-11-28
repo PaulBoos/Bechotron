@@ -6,6 +6,7 @@ import in.ankushs.dbip.api.DbIpClient;
 import in.ankushs.dbip.api.GeoEntity;
 import in.ankushs.dbip.exceptions.InvalidIPException;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -88,6 +89,11 @@ public class DBIPModule extends ListenerAdapter implements Module {
 	
 	public static void main(String[] args) {
 		final DBIPModule module = new DBIPModule();
+	}
+	
+	@Override
+	public void init(Guild guild) {
+	
 	}
 	
 	@Override

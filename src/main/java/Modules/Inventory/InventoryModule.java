@@ -2,12 +2,18 @@ package Modules.Inventory;
 
 import Modules.Module;
 import Modules.RequireModuleHook;
+import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.List;
 
 public class InventoryModule implements Module {
 	
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

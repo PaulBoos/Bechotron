@@ -2,12 +2,18 @@ package Modules.Calculator;
 
 import Modules.Module;
 import Modules.RequireModuleHook;
+import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.List;
 
 public class Calculator implements Module {
 	
 	private RequireModuleHook HOOK = new RequireModuleHook();
+	
+	@Override
+	public void init(Guild guild) {
+	
+	}
 	
 	@Override
 	public String getDescription() {

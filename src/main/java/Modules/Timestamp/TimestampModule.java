@@ -1,6 +1,6 @@
 package Modules.Timestamp;
 
-import Head.GuildModule;
+import Modules.Module;
 import Modules.RequireModuleHook;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TimestampModule extends ListenerAdapter implements GuildModule {
+public class TimestampModule extends ListenerAdapter implements Module {
 	
 	private static final HashMap<String, Integer> timezoneOffsets = new HashMap<>() {{
 		put("1044331600969740308",   0); // UTC
@@ -22,10 +22,13 @@ public class TimestampModule extends ListenerAdapter implements GuildModule {
 		put("1044332040063029300", + 1); // CET
 	}};
 	
+	private static TimestampModule instance;
+	private final List<Long> enabledGuilds = new ArrayList<>();
+	
 	@Override
 	public void onMessageReceived(@NotNull MessageReceivedEvent event) {
 		if(!event.isFromGuild()) return;
-		if(event.getGuild().getIdLong() != 739513862449266729L && event.getGuild().getIdLong() != 1037783202430976131L) return;
+		if(!enabledGuilds.contains(event.getGuild().getIdLong())) return;
 		if(event.getAuthor().isBot()) return;
 		String s = event.getMessage().getContentRaw();
 		Pattern p = Pattern.compile("(10|11|12|\\d)([;,:.]\\d\\d)?\\s?(am|pm)");
@@ -56,9 +59,17 @@ public class TimestampModule extends ListenerAdapter implements GuildModule {
 		}
 	}
 	
+	private TimestampModule() {}
+	
+	public static TimestampModule createModule(long guildId) {
+		if(instance == null) instance = new TimestampModule();
+		instance.enabledGuilds.add(guildId);
+		return instance;
+	}
+	
 	@Override
 	public void init(Guild guild) {
-	
+		guild.getJDA().addEventListener(instance);
 	}
 	
 	@Override

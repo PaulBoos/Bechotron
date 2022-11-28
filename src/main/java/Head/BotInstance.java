@@ -1,6 +1,7 @@
 package Head;
 
 import Modules.Admin.GlobalBanlist;
+import Modules.DBIP.DBIPModule;
 import Modules.DeutscheBahn.DBModule;
 import Modules.Fun.ShipperModule;
 import Modules.Music.MusicModule;
@@ -90,8 +91,8 @@ public class BotInstance {
 		TimestampModule.createModule(1037783202430976131L);
 		VotingModule vm = new VotingModule(this, 739513862449266729L, 282551955975307264L, 529637080431853589L);
 		
-		//DBIPModule dbipModule = new DBIPModule();
-		//jda.addEventListener(dbipModule);
+//		DBIPModule dbipModule = new DBIPModule();
+//		jda.addEventListener(dbipModule);
 		
 		
 	}

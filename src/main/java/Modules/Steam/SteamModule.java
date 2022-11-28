@@ -84,7 +84,7 @@ public class SteamModule implements Module {
 			}
 		}).start();
 		Thread.sleep(10000);
-		BotInstance.steamModule.prettySteamProfileEmbed(758778066725371994L, 76561198320395703L);
+		BotInstance.steamModule.prettySteamProfileEmbed(775070563109568512L, 76561198320395703L);
 		// channel 758778066725371994L
 		// user     76561197960435530L
 	}

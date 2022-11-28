@@ -55,6 +55,7 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 					}
 				} catch(IOException e) {
 					event.reply("Your search could not be completed.").queue();
+					e.printStackTrace();
 				}
 			},
 			new OptionData(OptionType.STRING, "query", "Put the query term here.", true),
@@ -65,7 +66,7 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 	}
 	
 	public static List<UDEntry> requestUrbanEntries(String searchQuery) throws IOException {
-		return mapper.readValue(new URL(BASE_URL + searchQuery), entryList.class).list;
+		return mapper.readValue(new URL((BASE_URL + searchQuery).replace(" ", "%20")), entryList.class).list;
 	}
 	
 	@Override

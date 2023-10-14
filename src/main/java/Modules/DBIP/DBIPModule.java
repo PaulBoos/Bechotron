@@ -92,11 +92,6 @@ public class DBIPModule extends ListenerAdapter implements Module {
 	}
 	
 	@Override
-	public void init(Guild guild) {
-	
-	}
-	
-	@Override
 	public String getDescription() {
 		return "Module for looking up IP addresses geographic information.\nIP Geolocation by DB-IP (https://db-ip.com/)";
 	}

@@ -96,12 +96,6 @@ public class SteamModule implements Module {
 		} else return token;
 	}
 	
-	
-	@Override
-	public void init(Guild guild) {
-	
-	}
-	
 	@Override
 	public String getDescription() {
 		return "This Module allows to get some information off steam.";

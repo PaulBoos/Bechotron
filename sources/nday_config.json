@@ -1,0 +1,19 @@
+{
+  "incomePerPopulation" : 0.001,
+  "radiationPerNuke" : 1.0,
+  "interceptorCost" : 15.0,
+  "nukeCost" : 10.0,
+  "nations" : {
+    "282551955975307264" : {
+      "name" : "testcountry",
+      "flag" : "\uD83C\uDFF3️",
+      "materials" : 0,
+      "population" : 1000,
+      "nukes" : 0,
+      "interceptors" : 0,
+      "radiation" : 0,
+      "channel" : 1157853962490368041
+    }
+  },
+  "settings" : [ 0.001, 1.0, 10.0, 15.0 ]
+}

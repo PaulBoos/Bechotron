@@ -148,11 +148,6 @@ public class VotingModule extends ListenerAdapter implements Module {
 	}
 	
 	@Override
-	public void init(Guild guild) {
-	
-	}
-	
-	@Override
 	public String getDescription() {
 		return "This module allows users to create and vote on ballots.";
 	}

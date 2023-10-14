@@ -12,13 +12,8 @@ public class BanlistModule extends ListenerAdapter implements Module {
 	private RequireModuleHook HOOK = new RequireModuleHook();
 	
 	@Override
-	public void init(Guild guild) {
-	
-	}
-	
-	@Override
 	public String getDescription() {
-		return "This module bans accounts present on your banlist. WIP";
+		return "This module bans accounts present on this server's banlist. WIP";
 	}
 	
 	@Override

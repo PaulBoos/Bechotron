@@ -11,11 +11,6 @@ public class TycoonModule extends ListenerAdapter implements Module {
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	@Override
-	public void init(Guild guild) {
-	
-	}
-	
-	@Override
 	public String getDescription() {
 		return "Take part in my global multiplayer tycoon game!";
 	}

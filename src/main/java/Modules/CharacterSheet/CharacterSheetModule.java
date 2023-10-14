@@ -21,11 +21,6 @@ public class CharacterSheetModule extends ListenerAdapter implements Module {
 	}
 	
 	@Override
-	public void init(Guild guild) {
-	
-	}
-	
-	@Override
 	public String getDescription() {
 		return "This module allows you to create and share your own character sheets!";
 	}

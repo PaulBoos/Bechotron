@@ -1,11 +1,15 @@
 package Modules.SlashCommands;
 
 import Modules.Music.MusicModule;
+import Modules.Plex.Library.Media;
+import Modules.Plex.Library.PlexAlbum;
+import Modules.Plex.Library.PlexArtist;
+import Modules.Plex.Library.PlexTrack;
+import Modules.Plex.PlexServerModule;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
-import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
@@ -17,6 +21,7 @@ import net.dv8tion.jda.api.utils.AttachedFile;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import net.dv8tion.jda.internal.interactions.component.ButtonImpl;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 
 import java.io.File;
 import java.sql.SQLException;
@@ -30,6 +35,8 @@ import static net.dv8tion.jda.api.interactions.commands.OptionType.*;
 
 public class Command {
 	
+	public static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(Command.class);
+	
 	public static final Command
 		SAY = new Command(
 				"say",
@@ -41,20 +48,20 @@ public class Command {
 		event -> {
 			event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "))).queue();
 		},
-				new OptionData(
+		new OptionData(
 				STRING,
-						"message",
-								"What to say"
+				"message",
+				"What to say"
 		).setRequired(true)
-		),
-		PING = new Command(
+		);
+	public static final Command PING = new Command(
 				"ping",
 				"Pong.",
 				event -> event.reply("Pong.").queue(),
 				"Ping!",
 				event -> event.getChannel().sendMessage("Pong.").queue()
-		),
-		DELETE = new Command(
+		);
+	public static final Command DELETE = new Command(
 			"delete",
 			"Delete x Messages",
 			event -> {
@@ -85,14 +92,13 @@ public class Command {
 				"count",
 				"Count of Messages to delete."
 			)
-		),
-		MUSIC = new Command(
+		);
+	public static final Command MUSIC = new Command(
 			"music",
 			event -> {
 				switch(event.getSubcommandName()) {
 					case "play" -> {
 						event.deferReply().queue();
-						
 						AudioChannel vc = event.getMember().getVoiceState().getChannel();
 						TextChannel tc = event.getChannel().asTextChannel();
 						String url = event.getOption("song").getAsString();
@@ -112,7 +118,9 @@ public class Command {
 						event.getHook().editOriginal("⏹ Stopping Playback!").queue();
 					}
 					case "volume" -> {
-					
+						event.deferReply().queue();
+						MusicModule.manager.setVolume(event.getGuild(), Math.min(100, event.getOption("volume").getAsInt()));
+						event.getHook().editOriginal(String.format("Set volume to %d%%", event.getOption("volume").getAsInt())).queue();
 					}
 				}
 			},
@@ -121,10 +129,11 @@ public class Command {
 				.addOption(STRING, "song", "what song to add", true),
 			new SubcommandData("stop", "Skip the current song and clear the queue."),
 			new SubcommandData("skip", "Skip the current song."),
-			new SubcommandData("volume", "[WIP] Change the default Volume")
+			new SubcommandData("volume", "Change the current Volume.")
 				.addOption(INTEGER, "volume", "Use a value between 1 - 200%", true)
-		),
-		MEMBERINFO = new Command(
+		);
+	
+	public static final Command MEMBERINFO = new Command(
 			"memberinfo",
 			"Tell me something about the member",
 			event -> {
@@ -133,50 +142,56 @@ public class Command {
 				StringBuilder description = new StringBuilder();
 				{
 					assert target != null;
-					if(target.getUser().getName() != target.getEffectiveName())
+					if(!target.getUser().getName().equals(target.getEffectiveName()))
 						description.append("Handle: ").append(target.getUser().getName());
 					switch(target.getOnlineStatus()) {
 						case ONLINE -> description.append("\n\uD83D\uDFE2 Online");
 						case IDLE -> description.append("\n\uD83D\uDFE1 Idle");
 						case DO_NOT_DISTURB -> description.append("\n\uD83D\uDD34 Do not Disturb");
-						case OFFLINE -> description.append("\n\u26AA Offline");
-						default -> description.append("\n\u2754 Unknown");
+						case OFFLINE -> description.append("\n⚪ Offline");
+						default -> description.append("\n❔ Unknown");
 					}
-					if(target.getVoiceState().inAudioChannel()) description.append("\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
+					if(target.getVoiceState().inAudioChannel()) description.append("\n\nConnected to:\n> ").append(target.getVoiceState().getChannel().getName());
 				}
 				event.replyEmbeds(new EmbedBuilder()
 					.setTitle(target.getEffectiveName())
 					.setDescription(description.toString())
-					.setFooter("Requested by " + event.getMember().getUser().getAsTag() + " #" + event.getMember().getIdLong())
+					.setFooter("Requested by " + event.getMember().getUser().getName() + " #" + event.getMember().getIdLong())
 					.setImage(target.getUser().getAvatarUrl()).build()).complete();
 			},
 			new OptionData(
-				USER,
-				"member",
-				"Who do you want more information about?"
+					USER,
+					"member",
+					"Who do you want more information about?"
 			)
-		),
-		AVATAR = new Command(
+		);
+	public static final Command AVATAR = new Command(
 			"avatar",
 			"Send the user's Avatar",
-			event -> event.reply(event.getOption("member").getAsMember().getUser().getAvatarUrl()).queue()
-		),
-		VIP = new Command(
+			event -> event.reply(event.getOption("member").getAsMember().getUser().getEffectiveAvatarUrl()).queue(),
+			new OptionData(
+					USER,
+					"member",
+					"Whose Avatar you want to see",
+					true
+			)
+		);
+	public static final Command VIP = new Command(
 			"vip",
 			"Get / Send someone a VIP ticket!",
 			event -> {
 				event.deferReply().queue();
 				OptionMapping target = event.getOption("target");
 				if(target == null) event.getHook().editOriginalAttachments(AttachedFile.fromData(new File("images/vip.png"))).queue();
-				else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFiles(AttachedFile.fromData(new File("images/vip.png"))).queue();
+				else event.getHook().sendMessage("Hey! " + target.getAsMember().getAsMention() + ", have this VIP-Ticket!").addFiles(AttachedFile.fromData(new File("sources/images/vip.png"))).queue();
 			},
 			new OptionData(
 				USER,
 				"target",
 				"Send someone this Ticket!"
 			).setRequired(false)
-		),
-		TIMEOUT = new Command(
+		);
+	public static final Command TIMEOUT = new Command(
 			"timeout",
 			"Timeout someone",
 			event -> {
@@ -195,8 +210,8 @@ public class Command {
 				"time",
 				"how long (in seconds)"
 			)
-		),
-		GLOBALBANREQUEST = new Command(
+		);
+	public static final Command GLOBALBANREQUEST = new Command(
 				"banrequest",
 				"Request a global ban",
 				event -> {
@@ -213,7 +228,7 @@ public class Command {
 										.build()
 						).addActionRow(
 								new ButtonImpl("ban " + event.getOption("target").getAsMember().getIdLong(), "Accept", ButtonStyle.SUCCESS, false, null),
-								new ButtonImpl("noban", "Decline", ButtonStyle.DANGER, false, null)
+								new ButtonImpl("deletemessage", "Decline", ButtonStyle.DANGER, false, null)
 						).queue();
 						event.getHook().editOriginal("Processing Request.").queue();
 					} catch(Exception e) {
@@ -233,6 +248,66 @@ public class Command {
 						"reason for banning"
 				).setRequired(true)
 		);
+	
+	public static final Command PLEX = new Command(
+			"plex",
+			"Request to play a Song, Album or Discography hosted on my Plex Server",
+			event -> {
+				event.deferReply().queue();
+				final int id;
+				int i;
+				try {
+					i = Integer.parseInt(event.getOption("plex").getAsString());
+				} catch(NumberFormatException ignored) {
+					i = -1;
+				}
+				id = i;
+				String search = event.getOption("plex").getAsString().toLowerCase();
+				
+				
+				PlexServerModule.getSearchable().stream().filter(
+						object -> object.getID() == id || object.getSearchable().toLowerCase().contains(search)
+				).findAny().ifPresent(
+						searchable -> {
+							if(event.getMember().getVoiceState().getChannel() != null) {
+								if(searchable instanceof PlexArtist artist) {
+									event.getHook().editOriginal("Playing " + artist.getName() + "'s Discography.").queue();
+									for(PlexAlbum album: artist.getAlbums())
+										for(PlexTrack track: album.getTracks())
+											playSomePlexSong(event, track.getId());
+								} else if(searchable instanceof PlexAlbum album) {
+									event.getHook().editOriginal("Playing " + album.getTitle()).queue();
+									for(PlexTrack track: album.getTracks())
+										playSomePlexSong(event, track.getId());
+								} else if(searchable instanceof PlexTrack song) {
+									event.getHook().editOriginal("Playing " + song.getTitle()).queue();
+									playSomePlexSong(event, song.getId());
+								}
+							} else event.getHook().editOriginal("You are not connected to a Voice Channel!").queue();
+						}
+				);
+			},
+			new OptionData(
+					STRING,
+					"plex",
+					"Artist, Album or Song",
+					true
+			)
+		);
+	
+	private static void playSomePlexSong(SlashCommandInteractionEvent event, int id) {
+		try {
+			PlexServerModule.getSongs().stream().filter(plexTrack -> plexTrack.getId() == id).findAny().ifPresent(track -> {
+				for(Media m: track.getMedia())
+					for(String url: m.getPlayableURLs())
+						MusicModule.manager.silentLoadAndPlay(
+								event.getMember().getVoiceState().getChannel(), url
+						);
+			});
+		} catch(NullPointerException e) {
+			throw new RuntimeException(e);
+		}
+	}
 	
 	private final SlashExecutor slashExecutor;
 	private final TextExecutor textExecutor;
@@ -261,7 +336,6 @@ public class Command {
 		for(OptionData od: optionData) commandData.addOption(od.getType(), od.getName(), od.getDescription(), od.isRequired());
 	}
 	
-	//TODO SUBCOMMAND SUPPORT
 	public Command(String command, SlashExecutor slashExecutor, String description, SubcommandData... subcommandData) {
 		this.command = command;
 		this.textCommand = null;

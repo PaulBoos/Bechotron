@@ -6,7 +6,7 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 /**
  * Holder for both the player and a track scheduler for one guild.
  */
-class GuildMusicManager {
+public class GuildMusicManager {
 	/**
 	 * Audio player for the guild.
 	 */
@@ -24,6 +24,7 @@ class GuildMusicManager {
 		player = manager.createPlayer();
 		scheduler = new TrackScheduler(player);
 		player.addListener(scheduler);
+		player.setVolume(50);
 	}
 	
 	/**

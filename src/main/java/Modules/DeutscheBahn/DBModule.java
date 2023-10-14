@@ -18,10 +18,14 @@ import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.components.ActionRow;
+import net.dv8tion.jda.api.interactions.components.Component;
 import net.dv8tion.jda.api.interactions.components.ItemComponent;
+import net.dv8tion.jda.api.interactions.components.LayoutComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import net.dv8tion.jda.api.requests.restaction.MessageCreateAction;
+import net.dv8tion.jda.api.requests.restaction.interactions.MessageEditCallbackAction;
 import net.dv8tion.jda.internal.interactions.component.ButtonImpl;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
@@ -350,10 +354,7 @@ public class DBModule extends ListenerAdapter implements Module {
 					event.getChannel().sendMessage("\uD83D\uDE11 It seems I don't remember this journey anymore, you will have to look it up again. Sorry!").queue();
 					event.editButton(eventButton.asDisabled().withEmoji(Emoji.fromUnicode("❌"))).queue();
 				}
-			} catch(NumberFormatException | IOException ignored) {
-				event.reply("❌ Oh no! Seems like something broke.\nThis might be mine or Deutsche Bahn's fault (or even both).\nMaybe try again later?").queue();
-				ignored.printStackTrace();
-			} catch(NullPointerException e) {
+			} catch(NumberFormatException | IOException | NullPointerException e) {
 				event.reply("❌ Oh no! Seems like something broke.\nThis might be mine or Deutsche Bahn's fault (or even both).\nMaybe try again later?").queue();
 				e.printStackTrace();
 			}
@@ -425,11 +426,6 @@ public class DBModule extends ListenerAdapter implements Module {
 		return input == null ? null : input
 				.replace("&#x0028;", "(")
 				.replace("&#x0029;", ")");
-	}
-	
-	@Override
-	public void init(Guild guild) {
-	
 	}
 	
 	@Override

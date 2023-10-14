@@ -1,10 +1,12 @@
 package Head;
 
-import Modules.Games.SkullGame;
 import Modules.Music.MusicModule;
 import Modules.SlashCommands.SlashModule;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.jetbrains.annotations.NotNull;
+import net.dv8tion.jda.api.utils.FileUpload;
+
+import java.io.File;
 
 public class GuildInstance {
 	
@@ -33,6 +35,15 @@ public class GuildInstance {
 		TempMessageReceiver(GuildInstance guildInstance) {
 			this.guildInstance = guildInstance;
 		}
+		
+		// TODO wenn Emma nervt diesen Listener wieder deaktivieren
+		
+		@Override
+		public void onGuildMemberJoin(GuildMemberJoinEvent event) {
+			if(event.getGuild().getIdLong() != guildInstance.guild || event.getGuild().getIdLong() != 1092947249434218538L) return;
+			event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(1093135488388431902L)).queue();
+		}
+		
 		/*TODO
 		@Override
 		public void onGuildMessageReceived(@NotNull GuildMessageReceivedEvent event) {

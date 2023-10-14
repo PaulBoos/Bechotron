@@ -1,13 +1,4 @@
 Made in Java with the awesome dv8tion JDA.
         *https://github.com/DV8FromTheWorld/JDA*
-Using the Lavaplayer by Sedmelluq.
-        *https://github.com/sedmelluq/lavaplayer*
 
-Sources:
-Werewolf:
-Werewolf icon:  www.onlinewebfonts.com/icon/438485 (18.08.2020)
-Witch icon:     www.onlinewebfonts.com/icon/37793  (18.08.2020)
-Cabdriver icon: www.onlinewebfonts.com/icon/426164 (18.08.2020)
-Hunter icon:    www.onlinewebfonts.com/icon/472864 (18.08.2020)
-Amor icon:      www.onlinewebfonts.com/icon/417    (18.08.2020)
-Thief icon:     www.onlinewebfonts.com/icon/37867  (18.08.2020)
+Trivia Questions supplied by the Open Trivia Database

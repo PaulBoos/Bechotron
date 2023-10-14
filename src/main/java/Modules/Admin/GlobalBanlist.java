@@ -38,10 +38,14 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	}
 	
 	private void ban(long userid, long guildid) {
-		PrivateChannel privateChannel = bot.jda.getUserById(userid).openPrivateChannel().complete();
-		privateChannel.sendMessage("Hello! You were just banned from " + bot.jda.getGuildById(guildid).getName() +
-				", because you are listed on my global banlist. " +
-				"To appeal this decision, send an email to ban-appeal@salt.faith").complete();
+		try {
+			bot.jda.getUserById(userid).openPrivateChannel().complete().sendMessage(
+					"Hello! You were just banned from " + bot.jda.getGuildById(guildid).getName() +
+					", because you are listed on my global banlist. " +
+					"To appeal this decision, send an email to ban-appeal@salt.faith").complete();
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
 		bot.jda.getGuildById(guildid).getMemberById(userid).ban(0, TimeUnit.SECONDS)
 				.reason("This account is listed on the global banlist.")
 				.complete();
@@ -53,6 +57,8 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 			long userid = Long.parseLong(event.getButton().getId().substring(4));
 			ban(userid, event.getGuild().getIdLong());
 			event.reply("Banned " + event.getGuild().getMemberById(userid).getEffectiveName()).queue();
+		} else if(event.getButton().getId().equalsIgnoreCase("noban") && event.getMember().getIdLong() == 282551955975307264L) {
+			event.getMessage().delete().complete();
 		}
 	}
 	
@@ -66,9 +72,12 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 	
 	@Override
 	public void onGuildMemberJoin(@NotNull GuildMemberJoinEvent event) {
+		/*
 		for(long b: bans)
 			if(b == event.getUser().getIdLong())
 				ban(b, event.getGuild().getIdLong());
+				
+		 */
 	}
 	
 	@Override
@@ -110,11 +119,6 @@ public class GlobalBanlist extends ListenerAdapter implements Module {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@Override
-	public void init(Guild guild) {
-	
 	}
 	
 	@Override

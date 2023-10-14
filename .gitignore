@@ -4,3 +4,5 @@ Bechotron 3.iml
 /.idea/*
 /target/*
 /tokens/*
+/sources/prun/planets/*
+/sources/prun/planets/

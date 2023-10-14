@@ -46,12 +46,6 @@ public class BanVoteModule extends ListenerAdapter implements Module {
 		// TODO unban users again
 	}
 	
-	
-	@Override
-	public void init(Guild guild) {
-	
-	}
-	
 	@Override
 	public String getDescription() {
 		return "This module allows you to vote on who to ban.";

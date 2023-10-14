@@ -14,9 +14,9 @@ public class PrivateChatHandler extends ListenerAdapter {
 		if(event.getAuthor().isBot()) return;
 		int sum = 0;
 		try {
-			Matcher m = Pattern.compile("\\d+[dD]\\d+").matcher(event.getMessage().getContentRaw());
+			Matcher m = Pattern.compile("\\d+[dD]\\d+").matcher(event.getMessage().getContentDisplay());
 			if(m.find()) {
-				String s = event.getMessage().getContentRaw().substring(m.start(),m.end());
+				String s = event.getMessage().getContentDisplay().substring(m.start(),m.end());
 				String[] ss = s.split("[dD]");
 				if(ss.length != 2) throw new Exception("Tell Becher about this.");
 				StringBuilder results = new StringBuilder("You rolled a [").append(s).append("]```");
@@ -36,13 +36,12 @@ public class PrivateChatHandler extends ListenerAdapter {
 				results.append("```");
 				results.insert(results.indexOf(s) + s.length() + 1," {Sum: " + sum + "}");
 				event.getChannel().sendMessage(results).queue();
-				System.out.println("[" + event.getAuthor().getIdLong() + "] " + event.getAuthor().getName() + " rolled a " + m.group() + " and got: " + sum);
 			}
 		} catch(Exception e) {
 			if(e.getMessage().equals("Provided text for message must be less than 2000 characters in length")) {
 				event.getChannel().sendMessage("Your Sum is " + sum).queue();
 			} else {
-				event.getChannel().sendMessage(e.getMessage()).queue();
+				e.printStackTrace();
 			}
 		}
 	}

@@ -11,12 +11,6 @@ public class SuggesterModule extends ListenerAdapter implements Module {
 	
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
-	
-	@Override
-	public void init(Guild guild) {
-	
-	}
-	
 	@Override
 	public String getDescription() {
 		return "This Module allows people to make suggestions.";

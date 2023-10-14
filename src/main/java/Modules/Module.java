@@ -6,12 +6,14 @@ import java.util.List;
 
 public interface Module {
 	
-	void init(Guild guild);
-	
-	String getDescription();
-	
+	default Module load(Guild guild) {
+		return this;
+	}
+	default Module unload(Guild guild) {
+		return this;
+	}
 	String getName();
-	
+	String getDescription();
 	List<RequireModuleHook> requireModules();
 	RequireModuleHook getMyRequireModuleHook();
 	

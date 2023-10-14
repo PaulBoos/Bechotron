@@ -3,6 +3,7 @@ package Modules.UrbanDictionary;
 import Modules.Module;
 import Modules.RequireModuleHook;
 import Modules.SlashCommands.Command;
+import Utils.SimpleHttpConnector;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -22,9 +23,9 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 	private static final RequireModuleHook HOOK = new RequireModuleHook();
 	
 	private static final String
-		BASE_URL = "http://api.urbandictionary.com/v0/define?term=",
-		BASE_RAN = "http://api.urbandictionary.com/v0/random",
-		BASE_TAG = "http://api.urbandictionary.com/v0/random?tag=";
+		BASE_URL = "https://api.urbandictionary.com/v0/define?term=",
+		BASE_RAN = "https://api.urbandictionary.com/v0/random",
+		BASE_TAG = "https://api.urbandictionary.com/v0/random?tag=";
 	
 	private static final ObjectMapper mapper = new ObjectMapper();
 	public static final Command URBAN = new Command(
@@ -49,7 +50,6 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 								.setColor(new Color(78,124,160))
 								.setAuthor("\"" + pointer.author + "\" in The Urban Dictionary", pointer.permalink)
 								.setImage("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flegalinsurrection.com%2Fwp-content%2Fuploads%2F2013%2F10%2FUrban-Dictionary-Logo.jpg");
-						
 						if(i == 0) event.replyEmbeds(eb.build()).complete();
 						else event.getChannel().sendMessageEmbeds(eb.build()).queue();
 					}
@@ -66,12 +66,7 @@ public class UrbanDictionaryModule extends ListenerAdapter implements Module {
 	}
 	
 	public static List<UDEntry> requestUrbanEntries(String searchQuery) throws IOException {
-		return mapper.readValue(new URL((BASE_URL + searchQuery).replace(" ", "%20")), entryList.class).list;
-	}
-	
-	@Override
-	public void init(Guild guild) {
-	
+		return mapper.readValue(SimpleHttpConnector.sendGetRequest(BASE_URL + searchQuery.replace(" ", "%20")), entryList.class).list;
 	}
 	
 	@Override

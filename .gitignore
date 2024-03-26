@@ -5,4 +5,5 @@ Bechotron 3.iml
 /target/*
 /tokens/*
 /sources/prun/planets/*
-/sources/prun/planets/
+/sources/**
+/data/**
